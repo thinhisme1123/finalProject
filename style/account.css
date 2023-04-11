@@ -1,0 +1,218 @@
+/*Mobdal Login */
+.modal-container {
+    display: flex;
+    height: 100%;
+}
+.modal-signup,
+.modal-login {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /* display: none; */
+}
+@keyframes appearLogandSign {
+    from {
+        transform: translateY(700px);
+    }
+    to {
+        transform: translateY(0);
+    }
+
+}
+.modal-signup.open,
+.modal-login.open {
+    display: flex;
+}
+.modal__overlay {
+    background-color: rgba(10, 8, 8, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.modal__overlay--signup {
+    background-color: rgba(10, 8, 8, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+}
+.modal__body {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    animation: appearLogandSign .5s ease;
+}
+.modal__body-signup {
+    position: relative;
+    width: 400px;
+    height: 480px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    animation: appearLogandSign .5s ease;
+
+}
+.modal__inner {
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.modal__header {
+    justify-content: space-between;
+    text-align: center;
+
+}
+.modal__inner h3 {
+    font-size: 35px;
+    font-weight: 400;
+    margin-top: 40px;
+}
+.modal-close-btn {
+    border: none;
+    font-size: 30px;
+    background-color: var(--white-color);
+    cursor: pointer;
+    margin-top: -10px;
+    padding: 0 6px;
+}
+.modal-close-btn--signup {
+    border: none;
+    font-size: 30px;
+    background-color: var(--white-color);
+    cursor: pointer;
+    margin-top: -10px;
+    padding: 0 6px;
+}
+
+.form-input {
+    margin-bottom: 20px;
+    margin-right: 24px;
+}
+.form-input-username,
+.form-input-password {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+    opacity: 0.5;
+}
+.form-input-password {
+    position: relative;
+}
+.eye-btn {
+    position: absolute;
+}
+.signup-btn,
+.login-btn {
+    width: 100%;
+    border: none;
+    background-color: #F3826C;
+    padding: 10px;
+    color: var(--white-color);
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.forget-loginwith {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.forget-loginwith-item {
+    text-decoration: none;
+    font-size: 15px;
+    color: #0055AA;
+}
+.OR-item {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 15px;
+}
+.login-mediasocial {
+    display: flex;
+    justify-content: space-between;
+}
+.signup-mediasocial {
+    display: flex;
+    justify-content: space-between;
+}
+.signup-mediasocial-btn {
+    height: 42px;
+    width: 165px;
+    border: 1px solid rgba(0, 0,0,0.3);
+    background-color: var(--white-color);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+.login-mediasocial-btn {
+    border: 1px solid rgba(0, 0,0,0.3);
+    background-color: var(--white-color);
+    height: 40px;
+    width: 110px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.icon-fb {
+    color: #1877F2;
+
+}
+.icon-fb,
+.icon-gg{
+    font-size: 20px;
+}
+.icon-apple {
+    font-size:25px;
+}
+.modal-signup-info {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.modal-signup-info a {
+    text-decoration: none;
+    color: #EE4D2D;
+}
+.modal-signup-info span {
+    color: black;
+}
+.modal-signup .modal-footer {
+    text-align: center;
+    display: flex;
+    height: 100px;
+}
+
+.modal-footer {
+    text-align: center;
+    display: flex;
+    height: 95px;
+}
+.modal-footer-item {
+    margin: auto;
+    font-size: 20px;
+}
+.modal-footer-item span {
+   opacity: 0.5;
+}
+
+.modal-footer-item button{
+    margin: auto;
+    border: none;
+    color: #EE4D2D;
+    background-color: var(--white-color);
+    cursor: pointer;
+}
+.regester-linking {
+    text-decoration: none;
+    color: #EE4D2D;
+    font-size: 20px;
+
+}

@@ -63,7 +63,7 @@
                 </nav>
                 <div class="user_serach">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
-                    <div class="account"><a href="" class="user-link"><i class="account-icon fa-solid fa-user"></i></a></div>
+                    <div class="account"><a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a></div>
                     <div class="inputbox transition-inputbox"><input class="input-search" type="text"></div>
                 </div>
             </header>
