@@ -32,23 +32,13 @@ $$('.user_search-search')[0].onclick = () => {
     const inputBox = $$('.inputbox')[0]
     inputBox.classList.toggle('open')
 }
-// hanlde slider automatic
-var counter = 1
-setInterval(() => {
-    document.getElementById('radio' + counter).checked = true;
-    counter++
-    if(counter > 4) counter = 1
-}, 4000);
-// hanlde clicing film detail
-
-Array.from($$('.watch-btn')).forEach((item) => {
-    item.onclick = (e) => {
-        const id = parseInt(e.srcElement.attributes[0].value)
-        filmList.forEach((film) => {
-            if(id === film.id) {
-                window.location.href = `filmDetail.php?id=${id}`
-            }
-        })
-        
+// hanlde checking login or not
+$("#cmt-box").onfocus = () => {
+    const iconCheck = `<i class="account-icon fa-solid fa-user"></i>`
+    if($$('.user-link')[0].innerHTML === iconCheck) {
+        console.log("not login")
     }
-})
+    else {
+        console.log("logged")
+    }
+}
