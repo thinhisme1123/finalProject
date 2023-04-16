@@ -349,10 +349,33 @@ background-color: rgba(0,0,0,0.8);
 
 
 
+/* Body Section */
+.maincontainer {
+    background-color: black;
+    height: 100vh;
+    color: white;
+}
+
+.movie-list-container {
+    padding: 20px;
+}
+
+.movie-newest-list {
+    display: flex;
+    height: 300px;
+}
+
+.movie-newest-item {
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+}
+
+
 
 /* footer section */
 #footer {
-    margin-top: 200px;
+    /* margin-top: 200px; */
     background-color:#000000;
     width: 100%;
     padding-bottom: 20px;
