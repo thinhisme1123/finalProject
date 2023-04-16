@@ -515,6 +515,7 @@ background-color: rgba(0,0,0,0.8);
 
 .movie-newest-list {
     display: flex;
+    align-items: center;
     height: 300px;
 }
 
