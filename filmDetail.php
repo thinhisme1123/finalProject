@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/style.css">
     <link rel="stylesheet" href="./style/filmDetail.css">
+    <link rel="stylesheet" href="./style/account.css">
+
 </head>
 <body>
     <!-- header section start -->
