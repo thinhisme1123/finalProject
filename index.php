@@ -9,6 +9,11 @@
     <link rel="stylesheet" href="./style/grid.css">
     <link rel="stylesheet" href="./icon/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./fav/Designbolts-Free-Multimedia-Film.512.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/style.css">
 </head>
@@ -131,42 +136,120 @@
     <!-- main content -->
     <div class="maincontainer">
         <div class="movie-list-container">
-        <h1>New release</h1>
+            <h1 class="movie-title-list">New release</h1>
             <div class="movie-newest-wrapper">
                 <div class="movie-newest-list">
-
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
                     </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
                     </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
                     </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
                     </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
                     </div>
                     
                 </div>
+                <i class="fa-solid fa-chevron-right arrow-newest-list-right"></i>
+                <i class="fa-solid fa-chevron-left arrow-newest-list-left"></i>
+            </div>
+        </div>
+
+        <div class="movie-list-container">
+            <h1 class="movie-title-list">Most favorite</h1>
+            <div class="movie-newest-wrapper">
+                <div class="movie-newest-list">
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 ">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    
+                </div>
+                <i class="fa-solid fa-chevron-right arrow-newest-list-right"></i>
+                <i class="fa-solid fa-chevron-left arrow-newest-list-left"></i>
             </div>
         </div>
     </div>
