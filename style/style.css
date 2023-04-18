@@ -277,13 +277,16 @@
 
 
 
-.user_serach {
+.user_search {
     display: flex;
     margin-top: 20px;
     margin-left: auto;
     margin-right: -20px;
     justify-content: space-between;
     position: relative;
+}
+.user-link {
+    color: white;
 }
 .user_search-searchicon,
 .account-icon {
@@ -437,71 +440,6 @@
 #radio4:checked ~ .navigation-auto .auto-btn4 {
     background-color: #40D3DC;
 }
-
-
-
-
-/* .slider {
-    height: 600px;
-    width: 100%;
-    background-color: black;
-}
-.slider-container {
-    width: 100%;
-}
-.slider-img {
-    height: 400px;
-    width: 100%;
-    margin-top: 20px;
-    transform-origin: right;
-    transform: scaleX(0);
-    z-index: -1;
-}   
-.transition-img {
-    transition: all 1s ease-out;
-}
-.slider-img.open {
-    transform-origin: left;
-    transform: scaleX(1);
-}
-
-.slider-container {
-    position: relative;
-}
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-  
-On hover, add a black background color with a little bit see-through
-.prev:hover, .next:hover {
-background-color: rgba(0,0,0,0.8);
-} 
-@keyframes sliderImg {
-    from {
-        transform: translateX(0);
-    } 
-    to {
-        transform: translateX(1500px);
-    }
-}*/
-
-
-
 /* Body Section */
 .maincontainer {
     background-color: black;

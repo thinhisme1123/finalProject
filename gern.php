@@ -1,30 +1,17 @@
-<?php 
-    require_once("handleData.php");
-
-    $id = $_GET['id'] ?? '';
-
-    $check = checkLogin();
-
-    // $film = getFilm($id);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- change by js -->
-    <title>Name Film</title>
+    <title>Genr Film</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/grid.css">
     <link rel="stylesheet" href="./icon/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./fav/Designbolts-Free-Multimedia-Film.512.ico">
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/filmDetail.css">
-    <link rel="stylesheet" href="./style/account.css">
-
+    <link rel="stylesheet" href="./style/gern.css">
 </head>
 <body>
     <!-- header section start -->
@@ -36,7 +23,7 @@
                 <nav class="nav">
                     <ul class="navcontainer">
                         <li class="nav-item"><a class="nav-item_link" href="">Home</a></li>
-                        <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genr</a>
+                        <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
                                     <li class="genr-list-item"><a href="" class="genr-list-item_link">Action Film</a></li>
@@ -78,96 +65,19 @@
                 </nav>
                 <div class="user_search">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
-                    <div class="account"><?php 
-                        if($check['code'] == 0) {
-                            echo('<a href="profile.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
-                        }
-                        else {
-                            echo('<a href="login.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
-                            
-                        }
-                        ?></div>
+                    <div class="account"><a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a></div>
                     <div class="inputbox transition-inputbox"><input placeholder="Search Film Name" class="input-search" type="text"></div>
                 </div>
             </header>
         </div>
     </div>
     <!-- header section end -->
-<!-- use php to render the interface -->
-    <!--film detail container start-->
-    <div class="filmdetail-section">
-        <div class="filmdetail-container">
-            <div class="filmdetail-container-grid">
-                <div class="filmdetail-container-poster">
-                    <div class="filmimg-container">
-                        <img id="film-img" src="" alt="">
-                        <h1 id="nameFilm">Film Title here</h1>
-                        <button class="trailer-btn">
-                            <i class="fa-brands fa-youtube"></i>
-                            Trailer</button>
-                        <button class="watch-btn">
-                            <i class="fa-solid fa-play"></i>
-                            Watch Film</button>
-                    </div>
-                </div>
-                <!-- information about the film start-->
-                <div class="filmdetail-container-infor">
-                    <div class="filmdetaile-infor-item">
-                        <h4 class="filmdetaile-infor-item_type">Gern: <span class="filmdetaile-infor-item_info">Phim hoạt hình</span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info">Trấn Thành, Lê Giang</span></h4>
-                    </div>
-                    <div class="filmdetaile-infor-item">
-                        <h4 class="filmdetaile-infor-item_type">Year: <span class="filmdetaile-infor-item_info">2021</span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Director: <span class="filmdetaile-infor-item_info">Trần Thành</span></h4>
-                    </div>
-                    <div class="filmdetaile-infor-item">
-                        <h4 class="filmdetaile-infor-item_type">Country: <span class="filmdetaile-infor-item_info">Việt Nam</span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Duration: <span class="filmdetaile-infor-item_info"><span id="duration">120</span> minutes</span></h4>
-                    </div>
-                </div>
-
-                <!-- information about the film end-->
-            </div>
-        </div>
+    <!-- main body start -->
+    <div class="main-content-container">
+    
     </div>
-    <!--film detail container end-->
-    <!-- commment section start -->
-    <div class="comment-seciton">
-        <div class="comment-container">
-            <div class="comment-container-grid">
-                <div class="row comment-header">
-                    <p><span id="cmt-amount">0</span> comments</p>
-                    <div class="comment-sort-style">List style
-                        <select name="sort-style" id="comment-sort-style-options">
-                            <option value="latest">Latest</option>
-                            <option value="Most Views">Most Views</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="row comment-content">
-                    <div class="icon-user">
-                        <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
-                        <span class="name-user">You</span>
-                    </div>
-                    <form action="handleData.php" method="post">
-                        <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here"></textarea>
-                        <button class="submit-comment-btn" type="submit" name="submit-comment-btn">Post</button>
-                    </form>
-                    <div class="comments-container">
-                        <div class="comments-container-item">
-                            <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
-                            <div class="name-and-content">
-                                <span class="name-user">You</span>
-                                <p class="comments-container-content">phim này hay quá</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <!-- main body end -->
 
-            </div>
-        </div>
-    </div>
-    <!-- commment section end -->
 
     <!-- foooter section start -->
     <footer id="footer">
@@ -223,29 +133,6 @@
         <h2>Copyright © T&ĐFilm</h2>
     </div>
     <!-- foooter section end -->
-    <!-- remind loggin modal start-->
-    <div class="modal-remind-login">
-            <div class="modal__remind-overlay"></div>
-            <div class="modal-remind-container">
-                <div class="modal__remind-body">
-                    <div class="modal__remind-inner">
-                        <h3>Message</h3>
-                        <div class="modal-remind-close">
-                                <i class="fa-solid fa-xmark"></i>
-                        </div>
-                    </div>
-                    <div class="modal_remind-content">
-                        <p>You have to login before comment any film !</p>
-                        <p>It will move to login page automatically in <span id="count-down">10</span> s</p> 
-                        <button class="move-login-btn"><a href="login.php" class="move-login-btn_link">Move to login</a></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    <!-- remind loggin modal end-->
-
-
-    <script type="text/javascript" src="./filmDetail.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
 </body>
 </html>

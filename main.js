@@ -40,7 +40,6 @@ setInterval(() => {
     if(counter > 4) counter = 1
 }, 4000);
 // hanlde clicing film detail
-
 Array.from($$('.watch-btn')).forEach((item) => {
     item.onclick = (e) => {
         const id = parseInt(e.srcElement.attributes[0].value)
@@ -49,7 +48,6 @@ Array.from($$('.watch-btn')).forEach((item) => {
                 window.location.href = `filmDetail.php?id=${id}`
             }
         })
-        
     }
 })
 
