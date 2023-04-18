@@ -1,5 +1,11 @@
 <?php 
+    require_once("handleData.php");
+
     $id = $_GET['id'] ?? '';
+
+    $check = checkLogin();
+
+    // $film = getFilm($id);
 ?>
 
 <!DOCTYPE html>
@@ -70,26 +76,98 @@
                         </li>
                     </ul>
                 </nav>
-                <div class="user_serach">
+                <div class="user_search">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
-                    <div class="account"><a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a></div>
+                    <div class="account"><?php 
+                        if($check['code'] == 0) {
+                            echo('<a href="profile.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
+                        }
+                        else {
+                            echo('<a href="login.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
+                            
+                        }
+                        ?></div>
                     <div class="inputbox transition-inputbox"><input placeholder="Search Film Name" class="input-search" type="text"></div>
                 </div>
             </header>
         </div>
     </div>
     <!-- header section end -->
-
+<!-- use php to render the interface -->
     <!--film detail container start-->
-    <div class="filmdetail-container">
-        <div class="grid">
-            <h1>hello</h1>
-            <form action="handleData.php" method="post">
-                <textarea name="cmt" id="cmt-box" cols="100" rows="5"></textarea>
-            </form>
+    <div class="filmdetail-section">
+        <div class="filmdetail-container">
+            <div class="filmdetail-container-grid">
+                <div class="filmdetail-container-poster">
+                    <div class="filmimg-container">
+                        <img id="film-img" src="" alt="">
+                        <h1 id="nameFilm">Film Title here</h1>
+                        <button class="trailer-btn">
+                            <i class="fa-brands fa-youtube"></i>
+                            Trailer</button>
+                        <button class="watch-btn">
+                            <i class="fa-solid fa-play"></i>
+                            Watch Film</button>
+                    </div>
+                </div>
+                <!-- information about the film start-->
+                <div class="filmdetail-container-infor">
+                    <div class="filmdetaile-infor-item">
+                        <h4 class="filmdetaile-infor-item_type">Gern: <span class="filmdetaile-infor-item_info">Phim hoạt hình</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info">Trấn Thành, Lê Giang</span></h4>
+                    </div>
+                    <div class="filmdetaile-infor-item">
+                        <h4 class="filmdetaile-infor-item_type">Year: <span class="filmdetaile-infor-item_info">2021</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Director: <span class="filmdetaile-infor-item_info">Trần Thành</span></h4>
+                    </div>
+                    <div class="filmdetaile-infor-item">
+                        <h4 class="filmdetaile-infor-item_type">Country: <span class="filmdetaile-infor-item_info">Việt Nam</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Duration: <span class="filmdetaile-infor-item_info"><span id="duration">120</span> minutes</span></h4>
+                    </div>
+                </div>
+
+                <!-- information about the film end-->
+            </div>
         </div>
     </div>
     <!--film detail container end-->
+    <!-- commment section start -->
+    <div class="comment-seciton">
+        <div class="comment-container">
+            <div class="comment-container-grid">
+                <div class="row comment-header">
+                    <p><span id="cmt-amount">0</span> comments</p>
+                    <div class="comment-sort-style">List style
+                        <select name="sort-style" id="comment-sort-style-options">
+                            <option value="latest">Latest</option>
+                            <option value="Most Views">Most Views</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row comment-content">
+                    <div class="icon-user">
+                        <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
+                        <span class="name-user">You</span>
+                    </div>
+                    <form action="handleData.php" method="post">
+                        <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here"></textarea>
+                        <button class="submit-comment-btn" type="submit" name="submit-comment-btn">Post</button>
+                    </form>
+                    <div class="comments-container">
+                        <div class="comments-container-item">
+                            <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
+                            <div class="name-and-content">
+                                <span class="name-user">You</span>
+                                <p class="comments-container-content">phim này hay quá</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- commment section end -->
 
     <!-- foooter section start -->
     <footer id="footer">
@@ -146,48 +224,20 @@
     </div>
     <!-- foooter section end -->
     <!-- remind loggin modal start-->
-    <div class="modal-login">
-            <div class="modal__overlay"></div>
-            <div class="modal-container">
-                <div class="modal__body">
-                    <div class="modal__inner">
-                        <div class="modal__header">
-                            <h3>Login</h3>
+    <div class="modal-remind-login">
+            <div class="modal__remind-overlay"></div>
+            <div class="modal-remind-container">
+                <div class="modal__remind-body">
+                    <div class="modal__remind-inner">
+                        <h3>Message</h3>
+                        <div class="modal-remind-close">
+                                <i class="fa-solid fa-xmark"></i>
                         </div>
-                        <div class="form-input">
-                            <input class="form-input-username" name="username" type="text" placeholder="Emai/Phonenumber/Username">
-                            <input class="form-input-password" name="password" type="password"  placeholder="Password">
-                        
-                        </div>
-                        <button name="" class="login-btn">LOGIN</button>
-                        
-                        <div class="forget-loginwith">
-                            <a href="" class="forget-loginwith-item">Forget Passoword</a>
-                            <a href="" class="forget-loginwith-item">Login with SMS</a>
-                        </div>
-                        <div class="OR-item">
-                            <span>OR</span>
-                        </div>
-                        <div class="login-mediasocial">
-                            <button class="login-mediasocial-btn">
-                                <i class="icon-fb fa-brands fa-facebook"></i>
-                                Facebook
-                            </button>
-                            <button class="login-mediasocial-btn">
-                                <i class="icon-gg fa-brands fa-google"></i>
-                                Google
-                            </button>
-                            <button class="login-mediasocial-btn">
-                                <i class="icon-apple fa-brands fa-apple"></i>
-                                Apple
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <p class="modal-footer-item">
-                                <span>You don't have an account?</span>
-                                <button class="modal-footer-signup-btn"><a href="regester.php" class="regester-linking">Regester</a></button>
-                            </p>
-                        </div>
+                    </div>
+                    <div class="modal_remind-content">
+                        <p>You have to login before comment any film !</p>
+                        <p>It will move to login page automatically in <span id="count-down">10</span> s</p> 
+                        <button class="move-login-btn"><a href="login.php" class="move-login-btn_link">Move to login</a></button>
                     </div>
                 </div>
             </div>

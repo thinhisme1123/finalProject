@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>T&ĐFilm</title>
+    <title>Genr Film</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/grid.css">
     <link rel="stylesheet" href="./icon/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./fav/Designbolts-Free-Multimedia-Film.512.ico">
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="./style/gern.css">
 </head>
 <body>
     <!-- header section start -->
@@ -71,104 +72,12 @@
         </div>
     </div>
     <!-- header section end -->
-    <!-- slider start-->
-    <div class="slider-container">
-        <div class="slider">
-            <!-- <div class="grid">
-                <div class="slider-container">
-                    <div class="slider-container_img">
-                        <img id="img-0" class="slider-img" src="./poster_slider/bogia.jpg" alt="">
-                    </div>
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-            </div>  -->
-            <div class="slides">
-                <!-- radio btn start -->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!-- radio btn end -->
-                <!-- slide img start-->
-                <div class="slide first">
-                    <button data-id="1" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/bogia.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="2" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/muoi.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="3" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/kinhdom.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="4" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/macbiec.jpg" alt="">
-                </div>
-                <!-- slide img end -->
-                <!-- automatic navigation start-->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-                <!-- automatic navigation end-->
-            </div>
-            <!-- manual navigation start -->
-            <div class="navigaiton-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-            <!-- manual navigation end -->
-        </div>
+    <!-- main body start -->
+    <div class="main-content-container">
+    
     </div>
-    <!-- slider end-->
-    <!-- main content -->
-    <div class="maincontainer">
-        <div class="movie-list-container">
-        <h1>New release</h1>
-            <div class="movie-newest-wrapper">
-                <div class="movie-newest-list">
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
-                    </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
-                    </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
-                    </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
-                    </div>
-                    <div class="movie-newest-item">
-                        <img class="movie-newest-img" src="poster/antman.jpg" alt="">
-                        <span class="movie-newest-name">Ant Man</span>
-                        <p class="movie-newest-desc">This is the description for the film</p>
-                        <button class="movie-newest-button">Watch</button>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- main body end -->
+
 
     <!-- foooter section start -->
     <footer id="footer">

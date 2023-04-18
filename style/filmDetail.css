@@ -1,8 +1,276 @@
-.filmdetail-container {
-    height: 500px;
+/* filmdetal section */
+.filmdetail-section {
+    padding: 30px 0;
     width: 100%;
     background-color: #40D3DC;
 }
+.filmdetail-container {
+}
+.filmdetail-container-grid {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.filmdetail-container-poster {
+    margin-top: 30px;
+}
+.filmimg-container {
+    position: relative;
+}
+#film-img {
+    height: 50%;
+    width: 100%;
+}
+#nameFilm {
+    position: absolute;
+    bottom: 92px;
+    left: 42px;
+    color: white;
+}
+.trailer-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+    background-color: #31b0d5;
+    margin-left: 20px;
+}
+.watch-btn {
+    position: absolute;
+    bottom: 50px;
+    left: 160px;
+    background-color: #c9302c;
+}
+.trailer-btn,
+.watch-btn {
+    font-size: 18px;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+}
+
+.filmdetail-container-infor {
+    margin-top: 10px;
+    background-color: #252525;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.filmdetaile-infor-item {
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.filmdetaile-infor-item{
+    color: white;
+}
+
+.filmdetaile-infor-item_type {
+    margin-top: 10px;
+}
+.filmdetaile-infor-item_info {
+    font-weight: 400;
+    color: #717171;
+}
+
+
+
+
+/* comment section */
+.comment-seciton {
+    background-color: black;
+    padding: 20px 0;
+}
+.comment-container {
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+}
+.comment-container-grid {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+}
+.comment-header p {
+    margin-top: 20px;
+    font-weight: 700;
+}
+.comment-sort-style {
+    margin-top: 20px;
+}
+.comment-content {
+    display: inline-block;
+    height: 500px;
+}
+.icon-user {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+.name-user {
+    font-size: 40px;
+    margin-left: 20px;
+}
+.icon-user img {
+    height: 50px;
+    width: 50px;
+}
+#cmt-box {
+    font-size: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    overflow: hidden;
+    height: auto;
+}
+.submit-comment-btn {
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #40D3DC;
+    color: white;
+    float: right;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+.comments-container {
+    margin-top: 50px;
+    display: flex;
+    border-top: 1px solid #ccc;
+    flex-direction: column;
+}
+.comments-container-item {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.comments-container-item img{
+    height: 50px;
+    width: 50px;
+}
+.comments-container-item .name-user {
+    font-size: 18px;
+    font-weight: 600;
+    color: #5772a8;
+}
+.comments-container-item p {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 #cmt-box {
     font-size: 15px;
 }
+.modal-remind-login {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+.modal-remind-login.open {
+    display: block;
+}
+
+
+.modal__remind-overlay {
+    background-color: rgba(10, 8, 8, 0.3);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.modal-remind-container {
+    display: flex;
+    height: 100%;
+}
+.modal__remind-body {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    animation: appearRemind .5s ease;
+}
+@keyframes appearRemind {
+    from {
+        transform: translateY(700px);
+    }
+    to {
+        transform: translateY(0);
+    }
+
+}
+.modal__remind-inner {
+    margin-right: 30px;
+    margin-left: 30px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.modal__remind-inner h3 {
+    font-size: 30px;
+    margin-top: 5px;
+}
+.modal-remind-close {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.modal_remind-content {
+    margin-right: 30px;
+    margin-left: 30px;
+    margin-top: 20px;
+    line-height: 2.5;
+}
+.modal_remind-content p{
+    font-size: 18px;
+}
+#count-down {
+    color: red;
+}
+.modal_remind-content button{
+    background-color: #40D3DC;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-size: 18px;
+}
+.move-login-btn_link {
+    text-decoration: none;
+    color: black;
+}
+
+
