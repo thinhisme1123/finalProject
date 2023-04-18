@@ -139,7 +139,7 @@
             <h1 class="movie-title-list">New release</h1>
             <div class="movie-newest-wrapper">
                 <div class="movie-newest-list">
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -147,7 +147,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -155,7 +155,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -163,7 +163,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -171,7 +171,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -179,7 +179,23 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -198,7 +214,7 @@
             <h1 class="movie-title-list">Most favorite</h1>
             <div class="movie-newest-wrapper">
                 <div class="movie-newest-list">
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -206,7 +222,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -214,7 +230,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -222,7 +238,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -230,7 +246,7 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
@@ -238,7 +254,23 @@
                             <button class="movie-newest-button">Watch</button>
                         </div>
                     </div>
-                    <div class="col-xl-2 ">
+                    <div class="">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="">
+                        <div class="movie-newest-item">
+                            <img class="movie-newest-img" src="poster/antman.jpg" alt="">
+                            <span class="movie-newest-name">Ant Man</span>
+                            <p class="movie-newest-desc">This is the description for the film</p>
+                            <button class="movie-newest-button">Watch</button>
+                        </div>
+                    </div>
+                    <div class="">
                         <div class="movie-newest-item">
                             <img class="movie-newest-img" src="poster/antman.jpg" alt="">
                             <span class="movie-newest-name">Ant Man</span>
