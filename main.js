@@ -39,7 +39,7 @@ setInterval(() => {
     counter++
     if(counter > 4) counter = 1
 }, 4000);
-// hanlde clicing film detail
+// hanlde clicing film detail 
 Array.from($$('.watch-btn')).forEach((item) => {
     item.onclick = (e) => {
         const id = parseInt(e.srcElement.attributes[0].value)
@@ -50,6 +50,12 @@ Array.from($$('.watch-btn')).forEach((item) => {
         })
     }
 })
+// hanlde click img move to click button watch
+// Array.from($$('.film-item-img-container')).forEach((item)=> {
+//     item.onclick = () => {
+
+//     }
+// }
 
 //handle scroll film list
     // const arrowsRight = document.querySelectorAll(".arrow-newest-list-right")
@@ -95,3 +101,4 @@ const dragging = (e) => {
     
 }
 movieItem.addEventListener("mousemove", dragging)
+

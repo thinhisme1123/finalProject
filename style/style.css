@@ -275,8 +275,6 @@
     color: white;
 }
 
-
-
 .user_search {
     display: flex;
     margin-top: 20px;
@@ -440,7 +438,49 @@
 #radio4:checked ~ .navigation-auto .auto-btn4 {
     background-color: #40D3DC;
 }
+/* slider section end */
+
 /* Body Section */
+/* New ver */
+.film-item {
+    text-align: center;
+    margin-top: 30px;
+    border-radius: 10px;
+}
+.film-item h4 {
+    margin-top: 5px;
+}
+
+.film-item-img-container { 
+    overflow: hidden;
+}
+.film-item-img-container img {
+    transition: transform 1s;
+    object-fit: cover;
+}
+
+.film-item-img-container:hover img{
+    transform: scale(1.2);
+    opacity: 0.5;
+}
+
+.film-item button{
+    padding: 5px 10px;
+    background-color: #40D3DC;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.film-item-watch-link {
+    text-decoration: none;
+    color: black;
+}
+
+
+
+/* Đạt ver */
 .maincontainer {
     background-color: black;
     color: white;
@@ -600,6 +640,9 @@
 }
 .footer-genr-list-item_link:hover {
     color: #66ad31;
+}
+.genr-list-item_link {
+    text-decoration: none;
 }
 /* icon about us section */
 .aboutus-icon-list {

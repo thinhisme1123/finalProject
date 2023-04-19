@@ -36,15 +36,15 @@
         else reuturn code 1 
     */
     // funtion to check login or not yet
-    // function checkLogin() {
-    //     // return array(
-    //     //     'code' => 0,
-    //     //     'message' => 'logged'
-    //     // );
-    //     return array(
-    //         'code' => 1,
-    //         'message' => 'not logged yet'
-    //     );
-    // }
+    function checkLogin() {
+        // return array(
+        //     'code' => 0,
+        //     'message' => 'logged'
+        // );
+        return array(
+            'code' => 1,
+            'message' => 'not logged yet'
+        );
+    }
     
 ?>

@@ -1,3 +1,10 @@
+<?php 
+
+    $gern = $_GET['gern'];
+    echo($gern);
+    // $getFilmGern = getFilmGerns($gern);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
