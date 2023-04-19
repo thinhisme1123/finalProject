@@ -1,25 +1,41 @@
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
-var filmList = [
-    {
-        id : 1,
-        path : 'bogia.jpg'
+var filmList = [{
+        id: 1,
+        path: 'bogia.jpg'
     },
     {
-        id : 2,
-        path : 'muoi.jpg'
+        id: 2,
+        path: 'muoi.jpg'
     },
     {
-        id : 3,
-        path : 'kinhdom.jpg'
+        id: 3,
+        path: 'kinhdom.jpg'
     },
     {
-        id : 4,
-        path : 'macbiec.jpg'
+        id: 4,
+        path: 'macbiec.jpg'
     },
 
 ]
+// handle search for film 
+const searchInput = document.getElementsByClassName('input-search')[0];
+searchInput.addEventListener('keydown', function (event) {
+    if (event.key === 'Enter') {
+        search();
+    }
+});
+
+function search() {
+    // Get the search query from the input field
+    const query = searchInput.value;
+    console.log(query)
+    window.location.href = "searchResult.php?input=" + query
+    
+    // Implement your search functionality here...
+}
+
 
 // handle list moble open
 $$('.header-list')[0].onclick = () => {
@@ -37,19 +53,21 @@ var counter = 1
 setInterval(() => {
     document.getElementById('radio' + counter).checked = true;
     counter++
-    if(counter > 4) counter = 1
+    if (counter > 4) counter = 1
 }, 4000);
-// hanlde clicing film detail 
+// hanlde clicking film detail 
 Array.from($$('.watch-btn')).forEach((item) => {
     item.onclick = (e) => {
         const id = parseInt(e.srcElement.attributes[0].value)
         filmList.forEach((film) => {
-            if(id === film.id) {
+            if (id === film.id) {
                 window.location.href = `filmDetail.php?id=${id}`
             }
         })
     }
 })
+
+
 // hanlde click img move to click button watch
 // Array.from($$('.film-item-img-container')).forEach((item)=> {
 //     item.onclick = () => {
@@ -58,47 +76,46 @@ Array.from($$('.watch-btn')).forEach((item) => {
 // }
 
 //handle scroll film list
-    // const arrowsRight = document.querySelectorAll(".arrow-newest-list-right")
-    // const arrowsLeft = document.querySelectorAll(".arrow-newest-list-left")
-    // const movieLists = document.querySelectorAll(".movie-newest-list")
+// const arrowsRight = document.querySelectorAll(".arrow-newest-list-right")
+// const arrowsLeft = document.querySelectorAll(".arrow-newest-list-left")
+// const movieLists = document.querySelectorAll(".movie-newest-list")
 
-    // arrowsRight.forEach((arrow, i) => {
-    //     const itemNumber = movieLists[i].querySelectorAll("img").length
-    //     let clickCount = 0
-    //     arrow.addEventListener("click", () => {
-    //         clickCount++
-    //         if (itemNumber - (6 + clickCount) >= 0) {
-    //             movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value - 220}px)`
-    //         } else {
-    //             movieLists[i].style.transform = "translateX(0)"
-    //             clickCount = 0
-    //         }
-            
-    //     })
-    // })
+// arrowsRight.forEach((arrow, i) => {
+//     const itemNumber = movieLists[i].querySelectorAll("img").length
+//     let clickCount = 0
+//     arrow.addEventListener("click", () => {
+//         clickCount++
+//         if (itemNumber - (6 + clickCount) >= 0) {
+//             movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value - 220}px)`
+//         } else {
+//             movieLists[i].style.transform = "translateX(0)"
+//             clickCount = 0
+//         }
 
-    // arrowsLeft.forEach((arrow, i) => {
-    //     const itemNumber = movieLists[i].querySelectorAll("img").length
-    //     let clickCountLeft = 0
-    //     arrow.addEventListener("click", () => {
-    //         clickCountLeft++
-    //         if (itemNumber - (6 + clickCountLeft) >= 0) {
-    //             movieLists[i].style.transform = "translateX(0)"
-    //             clickCountLeft = 0
-    //             // movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value + 220}px)`
-    //         } else {
-    //             // movieLists[i].style.transform = "translateX(0)"
-    //             // clickCountLeft = 0
-    //             movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value + 220}px)`
-    //         }
-            
-    //     })
-    // })
+//     })
+// })
+
+// arrowsLeft.forEach((arrow, i) => {
+//     const itemNumber = movieLists[i].querySelectorAll("img").length
+//     let clickCountLeft = 0
+//     arrow.addEventListener("click", () => {
+//         clickCountLeft++
+//         if (itemNumber - (6 + clickCountLeft) >= 0) {
+//             movieLists[i].style.transform = "translateX(0)"
+//             clickCountLeft = 0
+//             // movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value + 220}px)`
+//         } else {
+//             // movieLists[i].style.transform = "translateX(0)"
+//             // clickCountLeft = 0
+//             movieLists[i].style.transform = `translateX(${movieLists[i].computedStyleMap().get("transform")[0].x.value + 220}px)`
+//         }
+
+//     })
+// })
 
 const movieItem = document.querySelector(".movie-newest-list")
 const dragging = (e) => {
     movieItem.scrollBy = e.pageX;
-    
+
 }
 movieItem.addEventListener("mousemove", dragging)
-

@@ -1,24 +1,21 @@
 <?php 
+    $inputSearch = $_GET['input'] ?? '';
 
-    $gern = $_GET['gern'] ?? '';
-    echo($gern);
-    // $getFilmGern = getFilmGerns($gern);
+    echo($inputSearch);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Genr Film</title>
+    <title>T&ĐFilm</title>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="./style/grid.css">
     <link rel="stylesheet" href="./icon/fontawesome-free-6.1.2-web/fontawesome-free-6.1.2-web/css/all.min.css">
     <link rel="icon" type="image/x-icon" href="./fav/Designbolts-Free-Multimedia-Film.512.ico">
     <link rel="stylesheet" href="./style/responsive.css">
     <link rel="stylesheet" href="./style/style.css">
-    <link rel="stylesheet" href="./style/gern.css">
 </head>
 <body>
     <!-- header section start -->
@@ -33,10 +30,10 @@
                         <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Action Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Romantic Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Humor Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Romantic Film</a></li>
+                                    <li class="genr-list-item"><a href="gern.php?gern='action'" class="genr-list-item_link">Action Film</a></li>
+                                    <li class="genr-list-item"><a href="gern.php?gern='romantic'" class="genr-list-item_link">Romantic Film</a></li>
+                                    <li class="genr-list-item"><a href="gern.php?gern='humor'" class="genr-list-item_link">Humor Film</a></li>
+                                    <li class="genr-list-item"><a href="gern.php?gern='family'" class="genr-list-item_link">Family Film</a></li>
                                 </ul>
                                 <ul class="genr-list">
                                     <li class="genr-list-item"><a href="" class="genr-list-item_link">Drama Film</a></li>
@@ -65,8 +62,8 @@
                                     <li class="topphim-list-item"><a class="topphim-list-item_link" href="">Hot Film</a></li>
                                     <li class="topphim-list-item"><a class="topphim-list-item_link" href="">DC Conic</a></li>
                                     <li class="topphim-list-item"><a class="topphim-list-item_link" href="">HD Film</a></li>
-                                </ul>
-                            </div>
+                           
+                            </div>     </ul>
                         </li>
                     </ul>
                 </nav>
@@ -79,6 +76,54 @@
         </div>
     </div>
     <!-- header section end -->
+    <!-- slider start-->
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slides">
+                <!-- radio btn start -->
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <!-- radio btn end -->
+                <!-- slide img start-->
+                <div class="slide first">
+                    <button data-id="1" class="watch-btn">Watch</button>
+                    <img src="./poster_slider/bogia.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <button data-id="2" class="watch-btn">Watch</button>
+                    <img src="./poster_slider/muoi.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <button data-id="3" class="watch-btn">Watch</button>
+                    <img src="./poster_slider/kinhdom.jpg" alt="">
+                </div>
+                <div class="slide">
+                    <button data-id="4" class="watch-btn">Watch</button>
+                    <img src="./poster_slider/macbiec.jpg" alt="">
+                </div>
+                <!-- slide img end -->
+                <!-- automatic navigation start-->
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                </div>
+                <!-- automatic navigation end-->
+            </div>
+            <!-- manual navigation start -->
+            <div class="navigaiton-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+            </div>
+            <!-- manual navigation end -->
+        </div>
+    </div>
+    <!-- slider end-->
     <!-- main content start-->
     <div class="maincontainer">
         <div class="grid">
@@ -173,7 +218,6 @@
     </div>
     <!-- main content end-->
 
-
     <!-- foooter section start -->
     <footer id="footer">
         <div class="grid">
@@ -229,5 +273,6 @@
     </div>
     <!-- foooter section end -->
     <script type="text/javascript" src="./main.js"></script>
+    <script type="text/javascript" src="./searchResult.js"></script>
 </body>
 </html>

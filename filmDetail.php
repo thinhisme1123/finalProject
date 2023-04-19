@@ -1,15 +1,18 @@
-<?php 
-    require_once("handleData.php");
+<?php
+require_once("handleData.php");
 
-    $id = $_GET['id'] ?? '';
+$id = $_GET['id'] ?? '1';
 
-    $check = checkLogin();
+$check = checkLogin();
 
-    // $film = getFilm($id);
+// $film = getFilm($id);
+
+// $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,6 +29,7 @@
     <link rel="stylesheet" href="./style/account.css">
 
 </head>
+
 <body>
     <!-- header section start -->
     <div class="main-container">
@@ -78,22 +82,20 @@
                 </nav>
                 <div class="user_search">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
-                    <div class="account"><?php 
-                        if($check['code'] == 0) {
-                            echo('<a href="profile.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
-                        }
-                        else {
-                            echo('<a href="login.php" class="user-link"><i class="ccount-icon fa-solid fa-user"></i></a>');
-                            
-                        }
-                        ?></div>
+                    <div class="account"><?php
+                                            if ($check['code'] == 0) {
+                                                echo ('<a href="profile.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');
+                                            } else {
+                                                echo ('<a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');
+                                            }
+                                            ?></div>
                     <div class="inputbox transition-inputbox"><input placeholder="Search Film Name" class="input-search" type="text"></div>
                 </div>
             </header>
         </div>
     </div>
     <!-- header section end -->
-<!-- use php to render the interface -->
+    <!-- use php to render the interface -->
     <!--film detail container start-->
     <div class="filmdetail-section">
         <div class="filmdetail-container">
@@ -113,7 +115,22 @@
                 <!-- information about the film start-->
                 <div class="filmdetail-container-infor">
                     <div class="filmdetaile-infor-item">
-                        <h4 class="filmdetaile-infor-item_type">Gern: <span class="filmdetaile-infor-item_info">Phim hoạt hình</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Rating star:</h4>
+                        <div class="rating-stars">
+                            <span class="star" data-rating="1"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="2"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="3"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="4"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="5"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="6"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="7"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="8"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="9"><i class="fa-solid fa-star"></i></span>
+                            <span class="star" data-rating="10"><i class="fa-solid fa-star"></i></span>
+                        </div>
+                        <p id="filmdetaile-infor-item-ratingstart-content"></p>
+                        <p id="rating-stars-response"></p>
+                        <h4 class="gern-info filmdetaile-infor-item_type">Gern: <span class="filmdetaile-infor-item_info">Phim hoạt hình</span></h4>
                         <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info">Trấn Thành, Lê Giang</span></h4>
                     </div>
                     <div class="filmdetaile-infor-item">
@@ -124,9 +141,55 @@
                         <h4 class="filmdetaile-infor-item_type">Country: <span class="filmdetaile-infor-item_info">Việt Nam</span></h4>
                         <h4 class="filmdetaile-infor-item_type">Duration: <span class="filmdetaile-infor-item_info"><span id="duration">120</span> minutes</span></h4>
                     </div>
+                    <div class="filmdetaile-infor-review">
+                        <h4 class="filmdetaile-infor-item_type">Review Film</h4>
+                        <p>Là một bộ phim Việt nhưng Bố già được đầu tư vô cùng tỉ mỉ. Đầu tiên là hình ảnh xóm nhỏ nghèo, nước ngập lênh láng đặc trưng của Việt Nam. Xóm lúc nào cũng rộn vang gia đình thì hay cãi nhau, gia đình thì nhiều chuyện,... vô cùng chân thật và gần gũi.</p>
+                    </div>
                 </div>
-
                 <!-- information about the film end-->
+                <div class="filmdetail-container-similarfilm">
+                    <h1>Similiar Film</h1>
+                    <div class="filmdetail-container-similarfilm-grid">
+                        <div class="row">
+                            <div class="film-item l-3 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/antman.jpg" alt="">
+                                </div>
+                                <h4>Ant Man</h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                            </div>
+                            <div class="film-item l-3 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/antman.jpg" alt="">
+                                </div>
+                                <h4>Ant Man</h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                            </div>
+                            <div class="film-item l-3 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/antman.jpg" alt="">
+                                </div>
+                                <h4>Ant Man</h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                            </div>
+                            <div class="film-item l-3 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/antman.jpg" alt="">
+                                </div>
+                                <h4>Ant Man</h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                            </div>
+                            <div class="film-item l-3 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/antman.jpg" alt="">
+                                </div>
+                                <h4>Ant Man</h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -225,27 +288,28 @@
     <!-- foooter section end -->
     <!-- remind loggin modal start-->
     <div class="modal-remind-login">
-            <div class="modal__remind-overlay"></div>
-            <div class="modal-remind-container">
-                <div class="modal__remind-body">
-                    <div class="modal__remind-inner">
-                        <h3>Message</h3>
-                        <div class="modal-remind-close">
-                                <i class="fa-solid fa-xmark"></i>
-                        </div>
+        <div class="modal__remind-overlay"></div>
+        <div class="modal-remind-container">
+            <div class="modal__remind-body">
+                <div class="modal__remind-inner">
+                    <h3>Message</h3>
+                    <div class="modal-remind-close">
+                        <i class="fa-solid fa-xmark"></i>
                     </div>
-                    <div class="modal_remind-content">
-                        <p>You have to login before comment any film !</p>
-                        <p>It will move to login page automatically in <span id="count-down">10</span> s</p> 
-                        <button class="move-login-btn"><a href="login.php" class="move-login-btn_link">Move to login</a></button>
-                    </div>
+                </div>
+                <div class="modal_remind-content">
+                    <p>You have to login before comment or rating any film !</p>
+                    <p>It will move to login page automatically in <span id="count-down">10</span> s</p>
+                    <button class="move-login-btn"><a href="login.php" class="move-login-btn_link">Move to login</a></button>
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- remind loggin modal end-->
 
 
     <script type="text/javascript" src="./filmDetail.js"></script>
 </body>
+
 </html>

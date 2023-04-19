@@ -58,7 +58,7 @@
                                     <li class="topphim-list-item"><a class="topphim-list-item_link" href="">DC Conic</a></li>
                                     <li class="topphim-list-item"><a class="topphim-list-item_link" href="">HD Film</a></li>
                                 </ul>
-                            </div>
+                            </div>     
                         </li>
                     </ul>
                 </nav>
@@ -119,7 +119,7 @@
         </div>
     </div>
     <!-- slider end-->
-    <!-- main content -->
+    <!-- main content start-->
     <div class="maincontainer">
         <div class="grid">
             <div class="row">
@@ -211,6 +211,7 @@
             
         </div>
     </div>
+    <!-- main content end-->
 
     <!-- foooter section start -->
     <footer id="footer">
