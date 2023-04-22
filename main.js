@@ -66,8 +66,6 @@ Array.from($$('.watch-btn')).forEach((item) => {
         })
     }
 })
-
-
 // hanlde click img move to click button watch
 // Array.from($$('.film-item-img-container')).forEach((item)=> {
 //     item.onclick = () => {

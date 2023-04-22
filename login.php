@@ -57,7 +57,7 @@
                         <div class="modal-footer">
                             <p class="modal-footer-item">
                                 <span>You don't have an account?</span>
-                                <button class="modal-footer-signup-btn"><a href="regester.php" class="regester-linking">Regester</a></button>
+                                <button class="modal-footer-signup-btn"><a href="register.php" class="regester-linking">Register</a></button>
                             </p>
                         </div>
                     </div>

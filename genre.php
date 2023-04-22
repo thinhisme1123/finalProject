@@ -1,7 +1,8 @@
 <?php 
-    require_once('handleData.php');
-    $genre = $_GET['genre'] ?? '';
-    $getFilmGerne = getSameGenreBySearch($genre);
+
+    $gern = $_GET['gern'] ?? '';
+    echo($gern);
+    // $getFilmGern = getFilmGerns($gern);
 ?>
 
 <!DOCTYPE html>

@@ -163,3 +163,7 @@ filmList.forEach((film) => {
         $('#nameFilm').innerText = film.filmName
     }
 })
+// handle open video film
+function openVideoFilm() {
+    $$('.filmdetail-container-video')[0].classList.add('open')
+}

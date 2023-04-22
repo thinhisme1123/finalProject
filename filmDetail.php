@@ -1,10 +1,11 @@
 <?php
     require_once("handleData.php");
 
-    $id = $_GET['id'] ?? '1';
-    $check = checkLogin();
+$id = $_GET['id'] ?? '1';
 
-    $film = getFilmDetail($id);
+$check = checkLogin();
+
+// $film = getFilm($id);
 
     // $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
     $filmGenre = getSameGenre($id);
@@ -102,12 +103,12 @@
             <div class="filmdetail-container-grid">
                 <div class="filmdetail-container-poster">
                     <div class="filmimg-container">
-                        <img id="film-img" src="./poster/<?= $film['fPosterPath'] ?>" alt="">
-                        <h1 id="nameFilm"><?= $film['fName'] ?></h1>
+                        <img id="film-img" src="" alt="">
+                        <h1 id="nameFilm">Film Title here</h1>
                         <button class="trailer-btn">
                             <i class="fa-brands fa-youtube"></i>
                             Trailer</button>
-                        <button class="watch-btn">
+                        <button onclick="openVideoFilm()" class="watch-btn">
                             <i class="fa-solid fa-play"></i>
                             Watch Film</button>
                     </div>
@@ -146,6 +147,13 @@
                         <p><?= $film['fDesc'] ?></p>
                     </div>
                 </div>
+                <!-- video film  -->
+                <div class="filmdetail-container-video">
+                    <video width="640" height="480" controls>
+                        <source src="./videoFilm/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div> 
                 <!-- information about the film end-->
                 <div class="filmdetail-container-similarfilm">
                     <h1>Similiar Film</h1>
@@ -199,11 +207,13 @@
                                 </div>
                                 <h4>Ant Man</h4>
                                 <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div> -->
+                            </div>
 
                         </div>
+                        
                     </div>
                 </div>
+                                       
             </div>
         </div>
     </div>

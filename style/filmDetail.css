@@ -128,8 +128,21 @@
 .film-item h4 {
     color: white;
 }
-
-
+/* video film section */
+.filmdetail-container-video {
+    border-radius: 10px;
+    margin-top: 10px;
+    background-color: #252525;
+    padding-bottom: 30px;
+    text-align: center;
+    display: none;
+}
+.filmdetail-container-video video {
+    margin-top: -20px;
+}
+.filmdetail-container-video.open {
+    display: block;
+}
 
 
 /* comment section */
