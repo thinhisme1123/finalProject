@@ -25,8 +25,45 @@
         unset($acc['userPass']);
         
     }
+
+    //function to get all film
+    function getFilm() {
+        $conn = connect();
+        $ref = $conn->query('select * from FilmInfo');
+        $films = [];
+        for ($i = 1; $i <= $ref->num_rows; $i++) {
+            $films[] = $ref->fetch_assoc();
+        }
+        return $films;
+    }
+
     // funtion to return an array to get info for film detail 
     // getFilmDetail(id): id is parametre to check with db
+    function getFilmDetail($id) {
+        $films = getFilm();
+        foreach($films as $f) {
+            if ($id === $f['fId']) {
+                return $f;
+            }
+        }
+    }
+
+    //function to get film with the same genre
+    function getSameGenre($id) {
+        $films = getFilm();
+        foreach($films as $f) {
+            if ($id === $f['fId']) {
+                $genre = $f['fGenre'];
+            }
+        }
+        $filmGenre = [];
+        foreach($films as $f) {
+            if ($genre === $f['fGenre'] && $id != $f['fId']) {
+                $filmGenre[] = $f;
+            }
+        }
+        return $filmGenre; 
+    }
 
     
     // funtion checkLogin will return a value

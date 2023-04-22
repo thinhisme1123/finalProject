@@ -1,13 +1,13 @@
 <?php
-require_once("handleData.php");
+    require_once("handleData.php");
 
-$id = $_GET['id'] ?? '1';
+    $id = $_GET['id'] ?? '1';
+    $check = checkLogin();
 
-$check = checkLogin();
+    $film = getFilmDetail($id);
 
-// $film = getFilm($id);
-
-// $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
+    // $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
+    $filmGenre = getSameGenre($id);
 ?>
 
 <!DOCTYPE html>
@@ -39,26 +39,26 @@ $check = checkLogin();
                 <h2 class="nameWeb">T&ĐFilmWorld</h2>
                 <nav class="nav">
                     <ul class="navcontainer">
-                        <li class="nav-item"><a class="nav-item_link" href="">Home</a></li>
-                        <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genr</a>
+                        <li class="nav-item"><a class="nav-item_link" href="index.php">Home</a></li>
+                        <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
-                                <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Action Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Romantic Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Humor Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Romantic Film</a></li>
+                            <ul class="genr-list">
+                                    <li class="genr-list-item"><a href="genre.php?genre='Action'" class="genr-list-item_link">Action Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Romance'" class="genr-list-item_link">Romantic Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Comedy'" class="genr-list-item_link">Comedy Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='family'" class="genr-list-item_link">Family Film</a></li>
                                 </ul>
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Drama Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Anime Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Science Fiction Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Avengure Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Drama'" class="genr-list-item_link">Drama Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Anime'" class="genr-list-item_link">Anime Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Sci-fi'" class="genr-list-item_link">Science Fiction Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Adventure'" class="genr-list-item_link">Aventure Film</a></li>
                                 </ul>
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">War Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Sport Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">War Film</a></li>
-                                    <li class="genr-list-item"><a href="" class="genr-list-item_link">Movie Theaters</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='War'" class="genr-list-item_link">War Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Sport'" class="genr-list-item_link">Sport Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='Thriller'" class="genr-list-item_link">Thriller Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre='family'" class="genr-list-item_link">Movie Theaters</a></li>
                                 </ul>
                             </div>
                         </li>
@@ -102,8 +102,8 @@ $check = checkLogin();
             <div class="filmdetail-container-grid">
                 <div class="filmdetail-container-poster">
                     <div class="filmimg-container">
-                        <img id="film-img" src="" alt="">
-                        <h1 id="nameFilm">Film Title here</h1>
+                        <img id="film-img" src="./poster/<?= $film['fPosterPath'] ?>" alt="">
+                        <h1 id="nameFilm"><?= $film['fName'] ?></h1>
                         <button class="trailer-btn">
                             <i class="fa-brands fa-youtube"></i>
                             Trailer</button>
@@ -130,20 +130,20 @@ $check = checkLogin();
                         </div>
                         <p id="filmdetaile-infor-item-ratingstart-content"></p>
                         <p id="rating-stars-response"></p>
-                        <h4 class="gern-info filmdetaile-infor-item_type">Gern: <span class="filmdetaile-infor-item_info">Phim hoạt hình</span></h4>
+                        <h4 class="gern-info filmdetaile-infor-item_type">Genre: <span class="filmdetaile-infor-item_info"><?= $film['fGenre'] ?></span></h4>
                         <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info">Trấn Thành, Lê Giang</span></h4>
                     </div>
                     <div class="filmdetaile-infor-item">
                         <h4 class="filmdetaile-infor-item_type">Year: <span class="filmdetaile-infor-item_info">2021</span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Director: <span class="filmdetaile-infor-item_info">Trần Thành</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Director: <span class="filmdetaile-infor-item_info"><?= $film['fDir'] ?></span></h4>
                     </div>
                     <div class="filmdetaile-infor-item">
-                        <h4 class="filmdetaile-infor-item_type">Country: <span class="filmdetaile-infor-item_info">Việt Nam</span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Duration: <span class="filmdetaile-infor-item_info"><span id="duration">120</span> minutes</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Country: <span class="filmdetaile-infor-item_info"><?= $film['fCountry'] ?></span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Duration: <span class="filmdetaile-infor-item_info"><span id="duration"><?= $film['fDuration'] ?></span> minutes</span></h4>
                     </div>
                     <div class="filmdetaile-infor-review">
                         <h4 class="filmdetaile-infor-item_type">Review Film</h4>
-                        <p>Là một bộ phim Việt nhưng Bố già được đầu tư vô cùng tỉ mỉ. Đầu tiên là hình ảnh xóm nhỏ nghèo, nước ngập lênh láng đặc trưng của Việt Nam. Xóm lúc nào cũng rộn vang gia đình thì hay cãi nhau, gia đình thì nhiều chuyện,... vô cùng chân thật và gần gũi.</p>
+                        <p><?= $film['fDesc'] ?></p>
                     </div>
                 </div>
                 <!-- information about the film end-->
@@ -151,7 +151,21 @@ $check = checkLogin();
                     <h1>Similiar Film</h1>
                     <div class="filmdetail-container-similarfilm-grid">
                         <div class="row">
-                            <div class="film-item l-3 m-4 c-6">
+                            <?php
+                                foreach($filmGenre as $fg) {
+                                    ?>
+                                        <div class="film-item l-3 m-4 c-6">
+                                            <div class="film-item-img-container">
+                                                <img src="./poster/<?= $fg['fPosterPath'] ?>" alt="">
+                                            </div>
+                                            <h4><?= $fg['fName'] ?></h4>
+                                            <button class="film-item-watch-btn"><a href="filmDetail.php?id=<?= $fg['fId'] ?>" class="film-item-watch-link">Watch</a></button>
+                                        </div>
+                                    <?php
+                                }
+                                
+                            ?>
+                            <!-- <div class="film-item l-3 m-4 c-6">
                                 <div class="film-item-img-container">
                                     <img src="./poster/antman.jpg" alt="">
                                 </div>
@@ -185,7 +199,7 @@ $check = checkLogin();
                                 </div>
                                 <h4>Ant Man</h4>
                                 <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>

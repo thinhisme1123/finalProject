@@ -462,6 +462,8 @@
 .film-item-img-container img {
     transition: transform 1s;
     object-fit: cover;
+    width: 186px;
+    height: 271px;
 }
 
 .film-item-img-container:hover img{
