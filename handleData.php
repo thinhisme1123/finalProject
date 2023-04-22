@@ -65,6 +65,18 @@
         return $filmGenre; 
     }
 
+    //function to get film with the same genre by by genre searching
+    function getSameGenreBySearch($genre) {
+        $films = getFilm();
+        $filmSameGenre = [];
+        foreach($films as $f) {
+            if ($genre == $f['fGenre']) {
+                $filmSameGenre[] = $f;
+            }
+        }
+        return $filmSameGenre;
+    }
+
     
     // funtion checkLogin will return a value
     /* 

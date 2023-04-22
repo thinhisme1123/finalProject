@@ -28,22 +28,22 @@
                         <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="genre.php?genre='Action'" class="genr-list-item_link">Action Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Romance'" class="genr-list-item_link">Romantic Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Comedy'" class="genr-list-item_link">Comedy Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='family'" class="genr-list-item_link">Family Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Action" class="genr-list-item_link">Action Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Romance" class="genr-list-item_link">Romantic Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Comedy" class="genr-list-item_link">Comedy Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=family" class="genr-list-item_link">Family Film</a></li>
                                 </ul>
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="genre.php?genre='Drama'" class="genr-list-item_link">Drama Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Anime'" class="genr-list-item_link">Anime Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Sci-fi'" class="genr-list-item_link">Science Fiction Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Adventure'" class="genr-list-item_link">Aventure Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Drama" class="genr-list-item_link">Drama Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Anime" class="genr-list-item_link">Anime Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Sci-fi" class="genr-list-item_link">Science Fiction Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Adventure" class="genr-list-item_link">Aventure Film</a></li>
                                 </ul>
                                 <ul class="genr-list">
-                                    <li class="genr-list-item"><a href="genre.php?genre='War'" class="genr-list-item_link">War Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Sport'" class="genr-list-item_link">Sport Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='Thriller'" class="genr-list-item_link">Thriller Film</a></li>
-                                    <li class="genr-list-item"><a href="genre.php?genre='family'" class="genr-list-item_link">Movie Theaters</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=War" class="genr-list-item_link">War Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Sport" class="genr-list-item_link">Sport Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=Thriller" class="genr-list-item_link">Thriller Film</a></li>
+                                    <li class="genr-list-item"><a href="genre.php?genre=''" class="genr-list-item_link">Movie Theaters</a></li>
                                 </ul>
                             </div>
                         </li>
