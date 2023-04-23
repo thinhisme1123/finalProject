@@ -1,8 +1,9 @@
 <?php
+    session_start();
     require_once("handleData.php");
 
     $id = $_GET['id'] ?? '1';
-    $check = checkLogin();
+    $code = checkLogin($_SESSION['user'])['code'];
 
     $film = getFilmDetail($id);
 
@@ -83,7 +84,7 @@
                 <div class="user_search">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
                     <div class="account"><?php
-                                            if ($check['code'] == 0) {
+                                            if ($code == 0) {
                                                 echo ('<a href="profile.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');
                                             } else {
                                                 echo ('<a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');

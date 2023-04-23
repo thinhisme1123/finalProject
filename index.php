@@ -1,8 +1,9 @@
 <?php
     session_start();
-
     require_once('handleData.php');
     $films = getFilm();
+    $code = checkLogin($_SESSION['user'])['code'];
+
 ?>
 
 <!DOCTYPE html>
@@ -28,7 +29,7 @@
                 <h2 class="nameWeb">T&ĐFilmWorld</h2>
                 <nav class="nav">
                     <ul class="navcontainer">
-                        <li class="nav-item"><a class="nav-item_link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-item_link" href="index.php">Home</a></li>
                         <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
@@ -103,6 +104,7 @@
                 </div>
                 <div class="slide">
                     <button data-id="4" class="watch-btn">Watch</button>
+                    <button class="film-item-watch-btn"><a href="filmDetail.php?id=MB" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/macbiec.jpg" alt="">
                 </div>
                 <!-- slide img end -->

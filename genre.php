@@ -1,7 +1,10 @@
-<?php 
+<?php
+    session_start();
     require_once('handleData.php');
     $genre = $_GET['genre'] ?? '';
     $getFilmGerne = getSameGenreBySearch($genre);
+    $code = checkLogin($_SESSION['user'])['code'];
+    
 ?>
 
 <!DOCTYPE html>

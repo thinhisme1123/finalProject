@@ -1,5 +1,21 @@
 <?php 
+    session_start();
+    require_once('handleData.php');
     $inputSearch = $_GET['input'] ?? '';
+
+    $code = checkLogin($_SESSION['user'])['code'];
+
+    //this code is restrict customer from this page by enter it from web searching 
+    if (!isset($_SERVER['HTTP_REFERER'])) {
+        header("location: index.php");
+        die;
+    }
+    else if ($inputSearch == '' || !isset($inputSearch)) {
+        header("Location:".$_SERVER['HTTP_REFERER']);
+        die;
+    }
+
+    $films = getFilmBySearchBar($inputSearch);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,7 +40,7 @@
                 <h2 class="nameWeb">T&ĐFilmWorld</h2>
                 <nav class="nav">
                     <ul class="navcontainer">
-                        <li class="nav-item"><a class="nav-item_link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-item_link" href="index.php">Home</a></li>
                         <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
@@ -74,59 +90,25 @@
         </div>
     </div>
     <!-- header section end -->
-    <!-- slider start-->
-    <div class="slider-container">
-        <div class="slider">
-            <div class="slides">
-                <!-- radio btn start -->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
-                <!-- radio btn end -->
-                <!-- slide img start-->
-                <div class="slide first">
-                    <button data-id="1" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/bogia.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="2" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/muoi.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="3" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/kinhdom.jpg" alt="">
-                </div>
-                <div class="slide">
-                    <button data-id="4" class="watch-btn">Watch</button>
-                    <img src="./poster_slider/macbiec.jpg" alt="">
-                </div>
-                <!-- slide img end -->
-                <!-- automatic navigation start-->
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-                <!-- automatic navigation end-->
-            </div>
-            <!-- manual navigation start -->
-            <div class="navigaiton-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
-            </div>
-            <!-- manual navigation end -->
-        </div>
-    </div>
-    <!-- slider end-->
+
     <!-- main content start-->
     <div class="maincontainer">
         <div class="grid">
             <div class="row">
-                <div class="film-item l-2 m-4 c-6">
+                <?php
+                    foreach($films as $f) {
+                        ?>
+                            <div class="film-item l-2 m-4 c-6">
+                                <div class="film-item-img-container">
+                                    <img src="./poster/<?= $f['fPosterPath'] ?>" alt="">
+                                </div>
+                                <h4><?= $f['fName'] ?></h4>
+                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=<?= $f['fId'] ?>" class="film-item-watch-link">Watch</a></button>
+                            </div>
+                        <?php
+                    }
+                ?>
+                <!-- <div class="film-item l-2 m-4 c-6">
                     <div class="film-item-img-container">
                         <img src="./poster/antman.jpg" alt="">
                     </div>
@@ -209,7 +191,7 @@
                     </div>
                     <h4>Ant Man</h4>
                     <button class="film-item-watch-btn"><a href="filmDetail.php?id=2" class="film-item-watch-link">Watch</a></button>
-                </div>
+                </div> -->
             </div>
             
         </div>
