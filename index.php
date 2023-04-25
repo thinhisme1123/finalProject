@@ -2,6 +2,7 @@
     session_start();
     require_once('handleData.php');
     $films = getFilm();
+    $newFilm = getNewFilm();
 ?>
 
 <!DOCTYPE html>
@@ -89,20 +90,18 @@
                 <!-- radio btn end -->
                 <!-- slide img start-->
                 <div class="slide first">
-                    <!-- <button data-id="1" class="watch-btn">Watch</button> -->
                     <button class="film-item-watch-btn"><a href="filmDetail.php?id=BG" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/bogia.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <button data-id="2" class="watch-btn">Watch</button>
+                <button class="film-item-watch-btn"><a href="filmDetail.php?id=M" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/muoi.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <button data-id="3" class="watch-btn">Watch</button>
+                <button class="film-item-watch-btn"><a href="filmDetail.php?id=KD" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/kinhdom.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <!-- <button data-id="4" class="watch-btn">Watch</button> -->
                     <button class="film-item-watch-btn"><a href="filmDetail.php?id=MB" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/macbiec.jpg" alt="">
                 </div>
@@ -133,22 +132,19 @@
             <div class="newfilm-header">
                 <h1>New Films</h1>
                 <div class="row">
-                    <div class="film-item l-2 m-4 c-6">
-                        <div class="film-item-img-container">
-                            <img src="./poster/antman.jpg" alt="">
-                        </div>
-                        <h4>Ant Man</h4>
-                        <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                    </div>
-                    <div class="film-item l-2 m-4 c-6">
-                        <div class="film-item-img-container">
-                            <img src="./poster/antman.jpg" alt="">
-                        </div>
-                        <h4>Ant Man</h4>
-                        <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                    </div>
-
-
+                    <?php
+                        foreach($newFilm as $f) {
+                            ?>
+                                <div class="film-item l-2 m-4 c-6">
+                                    <div class="film-item-img-container">
+                                        <img src="./poster/<?= $f['fPosterPath'] ?>" alt="">
+                                    </div>
+                                    <h4><?= $f['fName'] ?></h4>
+                                    <button class="film-item-watch-btn"><a href="filmDetail.php?id=<?= $f['fId'] ?>" class="film-item-watch-link">Watch</a></button>
+                                </div>
+                            <?php  
+                        }  
+                    ?>
                 </div>
             </div>
             <div class="row">

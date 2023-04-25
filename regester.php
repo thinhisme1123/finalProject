@@ -1,6 +1,20 @@
-<?php 
+<?php
+    session_start();
+    if (isset($_SESSION['user']) == true) {
+        header("location: index.php");
+    }
+    $error = '';
     require_once('handleData.php');
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if (checkUser($_POST['username'])['code'] == 6) {
+            register($_POST['username'], $_POST['password']);
+            header("location: login.php");
+        } else if (checkUser($_POST['username'])['code'] == 5) {
+            $error = 'Username is exist!';
+        }
+    }
     
+        
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +43,11 @@
                             <div class="form-input">
                                 <input class="form-input-username" name="username" type="text" placeholder="Emai/Phonenumber/Username">
                                 <input class="form-input-username" name="password" type="text" placeholder="Password">
-                                
+                                <?php
+                                    if ($error != '') {
+                                        echo '<div>'.$error.'</div>';
+                                    }
+                                ?>
                             </div>
                             <button class="signup-btn">TIẾP THEO</button>
                             <div class="OR-item">

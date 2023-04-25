@@ -19,9 +19,6 @@
             }
             else if (empty($pass)) {
                 $error = 'Please enter your password';
-            }
-            else if (strlen($pass) < 6) {
-                $error = 'Password must have at least 6 characters';
             } else {
                 $rs = login($user, $pass);
                 if ($rs == 3) {
@@ -30,7 +27,7 @@
                     $error = 'Password is wrong';
                 } else {
                     $_SESSION['user'] = $rs['username'];
-                    $_SESSION['pass'] = $rs['userpass'];
+                    $_SESSION['id'] = $rs['userid'];
                     header('Location: index.php');
                     exit();
                 }

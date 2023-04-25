@@ -1,13 +1,13 @@
 <?php 
     // function to connet
     function connect() {
-        return new mysqli('127.0.0.1', 'root', '', 'FilmDB');
+        return new mysqli('127.0.0.1', 'root', '', 'ManageFilmWeb');
     }
 
     //function to verify login
     function login($user, $pass) {
         $conn = connect();
-        $sql = "select * from userinfo where username = '$user'";
+        $sql = "select * from userAcc where username = '$user'";
 
         $ref = $conn->query($sql);
         $acc = $ref->fetch_assoc();
@@ -88,17 +88,17 @@
     //function to check if username is set or not
     function checkUser($username) {
         $conn = connect();
-        $sql = "select username from userInfo where username = '$username'";
-        $ref = $conn->query('select * from FilmInfo');
-        if (!$ref) {
-            return array(
-                'code' => 5,
-                'message' => 'exist'
-            );
-        } else {
+        $sql = "select distinct username from userAcc where username = '$username'";
+        $ref = $conn->query($sql);
+        if ($ref == null || $ref) {
             return array(
                 'code' => 6,
                 'message' => 'success'
+            );
+        } else {
+            return array(
+                'code' => 5,
+                'message' => 'exist'
             );
         }
     }
@@ -106,11 +106,23 @@
     //function to add new account
     function register($username, $userpass) {
         $conn = connect();
-        $sqlcount = "select count(userid) from userInfo";
-        $sqlid = $conn->query($sqlcount);
+        $sqlcount = "select * from userAcc";
+        $sqlid = mysqli_num_rows($conn->query($sqlcount));
+        print_r($sqlid . ' ' . $sqlid);
         $userid = 'user' . strval($sqlid);
-        $sql = "insert into userInfo values ($userid, $username, $userpass)";
+        $sql = "insert into userAcc values ('$userid', '$username', '$userpass')";
         $conn->query($sql);
+    }
+
+    //function to get newest film (from 2022)
+    function getNewFilm() {
+        $conn = connect();
+        $ref = $conn->query('select * from FilmInfo where fYear > 2021');
+        $films = [];
+        for ($i = 1; $i <= $ref->num_rows; $i++) {
+            $films[] = $ref->fetch_assoc();
+        }
+        return $films;
     }
     
 ?>

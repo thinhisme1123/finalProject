@@ -193,7 +193,7 @@ $filmGenre = getSameGenre($id);
                         <p id="filmdetaile-infor-item-ratingstart-content"></p>
                         <p id="rating-stars-response"></p>
                         <h4 class="gern-info filmdetaile-infor-item_type">Genre: <span class="filmdetaile-infor-item_info"><?= $film['fGenre'] ?></span></h4>
-                        <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info">Trấn Thành, Lê Giang</span></h4>
+                        <h4 class="filmdetaile-infor-item_type">Actors: <span class="filmdetaile-infor-item_info"><?= $film['fActor'] ?></span></h4>
                     </div>
                     <div class="filmdetaile-infor-item">
                         <h4 class="filmdetaile-infor-item_type">Year: <span class="filmdetaile-infor-item_info">2021</span></h4>
@@ -288,7 +288,7 @@ $filmGenre = getSameGenre($id);
                         <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
                         <span class="name-user">You</span>
                     </div>
-                    <form action="handleData.php" method="post">
+                    <form action="" method="post">
                         <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here" onfocus="checklog()"></textarea>
                         <button class="submit-comment-btn" type="submit" name="submit-comment-btn">Post</button>
                     </form>

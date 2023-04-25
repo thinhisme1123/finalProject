@@ -1,6 +1,7 @@
 <?php
     require_once("handleData.php");
     session_start();
+    
     // $code = checkLogin($_SESSION['user'])['code'];
     if (isset($_SESSION['user']) == false) {
         header("location: login.php");
@@ -9,6 +10,8 @@
         session_destroy();
         header("location: index.php");
     }
+    $user = $_SESSION['user'];
+    $id = $_SESSION['id'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -95,8 +98,8 @@
                     <div class="profiledetail-container-item-info">
                         <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
                         <div class="profiledetail-container-item-info-text">
-                            <h4>ID: <span><?php echo(rand(100000, 999999)); ?></span></h4>
-                            <h4>Username: <span>admin</span></h4>
+                            <?php echo'<h4>ID: <span>'. $id. '</span></h4>'?>
+                            <?php echo'<h4>Username: <span>'. $user. '</span></h4>'?>
                             <h4>Password: <span>******</span></h4>
                         </div>
                     </div>
