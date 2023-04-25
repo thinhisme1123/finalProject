@@ -84,25 +84,33 @@
         }
         return $film;
     }
-    
-    // funtion checkLogin will return a value
-    /* 
-        check username exist or not
-        if logged will return code 0
-        else reuturn code 1 
-    */
-    // funtion to check login or not yet
-    function checkLogin($user) {
-        if ($user != null && $user != '') {
+
+    //function to check if username is set or not
+    function checkUser($username) {
+        $conn = connect();
+        $sql = "select username from userInfo where username = '$username'";
+        $ref = $conn->query('select * from FilmInfo');
+        if (!$ref) {
             return array(
-                'code' => 0,
-                'message' => 'logged'
+                'code' => 5,
+                'message' => 'exist'
+            );
+        } else {
+            return array(
+                'code' => 6,
+                'message' => 'success'
             );
         }
-        return array(
-            'code' => 1,
-            'message' => 'not logged yet'
-        );
+    }
+
+    //function to add new account
+    function register($username, $userpass) {
+        $conn = connect();
+        $sqlcount = "select count(userid) from userInfo";
+        $sqlid = $conn->query($sqlcount);
+        $userid = 'user' . strval($sqlid);
+        $sql = "insert into userInfo values ($userid, $username, $userpass)";
+        $conn->query($sql);
     }
     
 ?>

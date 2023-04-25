@@ -61,6 +61,7 @@
         margin-right: 20px;
     }
 
+
 }
 
 
@@ -89,6 +90,16 @@
     }
     .account {
         margin-right: 30px;
+    }
+    /* profile css */
+    .profiledetail-container-item {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    /* slider css */
+    .slider {
+        margin-right: 20px;
+        margin-left: 20px;
     }
 }
 /* Mobile App */

@@ -18,6 +18,23 @@
     background-color: #252525;
     padding-top: 10px;
     padding-bottom: 20px;
+    position: relative;
+}
+.profiledetail-container-item button {
+    border: none;
+    background-color: #40D3DC;
+    color: black;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 15px;
+}
+.profiledetail-container-item button a {
+    text-decoration: none;
+    color: black;
 }
 .profiledetail-container-item_header {
     border-bottom: 1px solid #ccc;

@@ -2,8 +2,6 @@
     session_start();
     require_once('handleData.php');
     $films = getFilm();
-    $code = checkLogin($_SESSION['user'])['code'];
-
 ?>
 
 <!DOCTYPE html>
@@ -91,7 +89,8 @@
                 <!-- radio btn end -->
                 <!-- slide img start-->
                 <div class="slide first">
-                    <button data-id="1" class="watch-btn">Watch</button>
+                    <!-- <button data-id="1" class="watch-btn">Watch</button> -->
+                    <button class="film-item-watch-btn"><a href="filmDetail.php?id=BG" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/bogia.jpg" alt="">
                 </div>
                 <div class="slide">
@@ -103,7 +102,7 @@
                     <img src="./poster_slider/kinhdom.jpg" alt="">
                 </div>
                 <div class="slide">
-                    <button data-id="4" class="watch-btn">Watch</button>
+                    <!-- <button data-id="4" class="watch-btn">Watch</button> -->
                     <button class="film-item-watch-btn"><a href="filmDetail.php?id=MB" class="film-item-watch-link">Watch</a></button>
                     <img src="./poster_slider/macbiec.jpg" alt="">
                 </div>
@@ -131,6 +130,27 @@
     <!-- main content start-->
     <div class="maincontainer">
         <div class="grid">
+            <div class="newfilm-header">
+                <h1>New Films</h1>
+                <div class="row">
+                    <div class="film-item l-2 m-4 c-6">
+                        <div class="film-item-img-container">
+                            <img src="./poster/antman.jpg" alt="">
+                        </div>
+                        <h4>Ant Man</h4>
+                        <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                    </div>
+                    <div class="film-item l-2 m-4 c-6">
+                        <div class="film-item-img-container">
+                            <img src="./poster/antman.jpg" alt="">
+                        </div>
+                        <h4>Ant Man</h4>
+                        <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
+                    </div>
+
+
+                </div>
+            </div>
             <div class="row">
                 <?php
                     foreach($films as $f) {

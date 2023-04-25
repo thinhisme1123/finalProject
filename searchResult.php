@@ -3,8 +3,6 @@
     require_once('handleData.php');
     $inputSearch = $_GET['input'] ?? '';
 
-    $code = checkLogin($_SESSION['user'])['code'];
-
     //this code is restrict customer from this page by enter it from web searching 
     if (!isset($_SERVER['HTTP_REFERER'])) {
         header("location: index.php");

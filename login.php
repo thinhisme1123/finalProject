@@ -9,34 +9,41 @@
     $user = '';
     $pass = '';
 
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
-        // $_SESSION['user'] = $_POST['username'];
-        // $_SESSION['pass'] = $_POST['password'];
-        // print_r($_SESSION['user'].$_SESSION['pass']);
-        // print_r(login($user, $pass));
-        if (empty($user)) {
-            $error = 'Please enter your username';
-        }
-        else if (empty($pass)) {
-            $error = 'Please enter your password';
-        }
-        else if (strlen($pass) < 6) {
-            $error = 'Password must have at least 6 characters';
-        } else {
-            $rs = login($user, $pass);
-            if ($rs == 3) {
-                $error = 'Username is wrong or does not exist!';  
-            } else if ($rs == 4) {
-                $error = 'Password is wrong';
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
+
+            if (empty($user)) {
+                $error = 'Please enter your username';
+            }
+            else if (empty($pass)) {
+                $error = 'Please enter your password';
+            }
+            else if (strlen($pass) < 6) {
+                $error = 'Password must have at least 6 characters';
             } else {
-                $_SESSION['user'] = $rs['username'];
-                $_SESSION['pass'] = $rs['userpass'];
-                header('Location: index.php');
-                exit();
+                $rs = login($user, $pass);
+                if ($rs == 3) {
+                    $error = 'Username is wrong or does not exist!';  
+                } else if ($rs == 4) {
+                    $error = 'Password is wrong';
+                } else {
+                    $_SESSION['user'] = $rs['username'];
+                    $_SESSION['pass'] = $rs['userpass'];
+                    header('Location: index.php');
+                    exit();
+                }
             }
         }
+    }
+
+    // $code = checkLogin($_SESSION['user'])['code'];
+    // if ($code == 0) {
+    //     header("location: profile.php");
+    // }
+    if (isset($_SESSION['user']) == true) {
+        header("location: profile.php");
     }
 ?>
 
@@ -67,9 +74,13 @@
                             <div class="form-input">
                                 <input class="form-input-username" name="username" type="text" placeholder="Emai/Phonenumber/Username">
                                 <input class="form-input-password" name="password" type="password"  placeholder="Password">
-                            
+                                <?php
+                                    if ($error != '') {
+                                        echo '<div>'.$error.' </div>';
+                                    }
+                                ?>
                             </div>
-                            <button name="" class="login-btn">LOGIN</button>
+                            <button type="submit" name="" class="login-btn">LOGIN</button>
                             
                             <div class="forget-loginwith">
                                 <a href="" class="forget-loginwith-item">Forget Passoword</a>

@@ -492,7 +492,16 @@
     background-color: black;
     color: white;
     min-height: 400px;
+    padding-top: 10px;
 }
+.newfilm-header {
+    border-bottom: 1px solid white;
+    padding-bottom: 20px;
+}
+.newfilm-header h1{
+    margin-top: 10px;
+}
+
 
 .movie-list-container {
     padding: 40px;

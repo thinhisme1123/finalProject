@@ -1,10 +1,15 @@
 <?php
-//     session_start();
-//     $code = checkLogin($_SESSION['user'])['code'];
-//     if ($code == 1) {
-//         header("location: login.php");
-//     }
-// ?>
+    require_once("handleData.php");
+    session_start();
+    // $code = checkLogin($_SESSION['user'])['code'];
+    if (isset($_SESSION['user']) == false) {
+        header("location: login.php");
+    }
+    if (isset($_POST['logout-button'])) {
+        session_destroy();
+        header("location: index.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +34,7 @@
                 <h2 class="nameWeb">T&ĐFilmWorld</h2>
                 <nav class="nav">
                     <ul class="navcontainer">
-                        <li class="nav-item"><a class="nav-item_link" href="">Home</a></li>
+                        <li class="nav-item"><a class="nav-item_link" href="index.php">Home</a></li>
                         <li class="nav-item nav-item_hover"><a class="nav-item_link" href="">Genre</a>
                             <div class="subnav-genr">
                                 <ul class="genr-list">
@@ -95,8 +100,10 @@
                             <h4>Password: <span>******</span></h4>
                         </div>
                     </div>
+                    <form action="" method="post">
+                        <button name="logout-button">Log Out</button> 
+                    </form>
                 </div>
-
             </div>
         </div>
     </div>

@@ -1,14 +1,13 @@
 <?php
-    session_start();
-    require_once("handleData.php");
+session_start();
+require_once("handleData.php");
 
-    $id = $_GET['id'] ?? '1';
-    $code = checkLogin($_SESSION['user'])['code'];
+$id = $_GET['id'] ?? '1';
 
-    $film = getFilmDetail($id);
+$film = getFilmDetail($id);
 
-    // $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
-    $filmGenre = getSameGenre($id);
+// $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
+$filmGenre = getSameGenre($id);
 ?>
 
 <!DOCTYPE html>
@@ -83,13 +82,7 @@
                 </nav>
                 <div class="user_search">
                     <div class="user_search-search"><i class="user_search-searchicon fa-solid fa-magnifying-glass"></i></div>
-                    <div class="account"><?php
-                                            if ($code == 0) {
-                                                echo ('<a href="profile.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');
-                                            } else {
-                                                echo ('<a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a>');
-                                            }
-                                            ?></div>
+                    <div class="account"><a href="login.php" class="user-link"><i class="account-icon fa-solid fa-user"></i></a></div>
                     <div class="inputbox transition-inputbox"><input placeholder="Search Film Name" class="input-search" type="text"></div>
                 </div>
             </header>
@@ -118,17 +111,85 @@
                     <div class="filmdetaile-infor-item">
                         <h4 class="filmdetaile-infor-item_type">Rating star:</h4>
                         <div class="rating-stars">
-                            <span class="star" data-rating="1"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="2"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="3"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="4"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="5"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="6"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="7"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="8"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="9"><i class="fa-solid fa-star"></i></span>
-                            <span class="star" data-rating="10"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="1"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="2"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="3"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="4"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="5"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="6"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="7"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="8"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="9"><i class="fa-solid fa-star"></i></span>
+                            <span onclick="checkRating()" class="star" data-rating="10"><i class="fa-solid fa-star"></i></span>
                         </div>
+                        <script>
+                            function checkRating() {
+                                if (!<?php echo isset($_SESSION['user']) ? 'true' : 'false'; ?>) {
+                                    $$('.modal-remind-login')[0].classList.add('open')
+                                    // hanlde count down comment box when modal open
+                                    let i = 10
+                                    moveInteral = setInterval(() => {
+                                        $("#count-down").innerHTML = i
+                                        i--
+                                        if (i < 1) {
+                                            window.location.href = "login.php"
+                                        }
+                                    }, 1000);
+                                } else {
+                                    //handle hover rating start of the film
+                                    const starts = Array.from($$('.fa-star'))
+                                    starts[0].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "So bad !"
+                                    }
+                                    starts[1].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Bad !"
+                                    }
+                                    starts[2].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Not good !"
+                                    }
+                                    starts[3].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Not very good !"
+                                    }
+                                    starts[4].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Normal !"
+                                    }
+                                    starts[5].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "So so !"
+                                    }
+                                    starts[6].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Looks good !"
+                                    }
+                                    starts[7].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Good !"
+                                    }
+                                    starts[8].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "So good !"
+                                    }
+                                    starts[9].onmouseover = () => {
+                                        $('#filmdetaile-infor-item-ratingstart-content').innerText = "Fantastic !"
+                                    }
+                                    const stars = document.querySelectorAll('.star');
+
+                                    function handleStarHover(event) {
+                                        const rating = event.target.dataset.rating;
+                                        for (let i = 0; i < stars.length; i++) {
+                                            if (i < rating) {
+                                                stars[i].classList.add('active');
+                                            } else {
+                                                stars[i].classList.remove('active');
+                                                $('#rating-stars-response').innerText = ""
+                                            }
+                                        }
+                                    }
+                                    stars.forEach(star => {
+                                        star.addEventListener('mouseover', handleStarHover);
+                                        star.onclick = () => {
+                                            $('#rating-stars-response').innerText = "Thanks for rating !"
+                                        }
+                                    })
+                                }
+                            }
+                        </script>
                         <p id="filmdetaile-infor-item-ratingstart-content"></p>
                         <p id="rating-stars-response"></p>
                         <h4 class="gern-info filmdetaile-infor-item_type">Genre: <span class="filmdetaile-infor-item_info"><?= $film['fGenre'] ?></span></h4>
@@ -153,18 +214,18 @@
                     <div class="filmdetail-container-similarfilm-grid">
                         <div class="row">
                             <?php
-                                foreach($filmGenre as $fg) {
-                                    ?>
-                                        <div class="film-item l-3 m-4 c-6">
-                                            <div class="film-item-img-container">
-                                                <img src="./poster/<?= $fg['fPosterPath'] ?>" alt="">
-                                            </div>
-                                            <h4><?= $fg['fName'] ?></h4>
-                                            <button class="film-item-watch-btn"><a href="filmDetail.php?id=<?= $fg['fId'] ?>" class="film-item-watch-link">Watch</a></button>
-                                        </div>
-                                    <?php
-                                }
-                                
+                            foreach ($filmGenre as $fg) {
+                            ?>
+                                <div class="film-item l-3 m-4 c-6">
+                                    <div class="film-item-img-container">
+                                        <img src="./poster/<?= $fg['fPosterPath'] ?>" alt="">
+                                    </div>
+                                    <h4><?= $fg['fName'] ?></h4>
+                                    <button class="film-item-watch-btn"><a href="filmDetail.php?id=<?= $fg['fId'] ?>" class="film-item-watch-link">Watch</a></button>
+                                </div>
+                            <?php
+                            }
+
                             ?>
                             <!-- <div class="film-item l-3 m-4 c-6">
                                 <div class="film-item-img-container">
@@ -228,7 +289,7 @@
                         <span class="name-user">You</span>
                     </div>
                     <form action="handleData.php" method="post">
-                        <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here"></textarea>
+                        <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here" onfocus="checklog()"></textarea>
                         <button class="submit-comment-btn" type="submit" name="submit-comment-btn">Post</button>
                     </form>
                     <div class="comments-container">
@@ -241,7 +302,24 @@
                         </div>
                     </div>
                 </div>
+                <script>
+                    function checklog() {
+                        if (!<?php echo isset($_SESSION['user']) ? 'true' : 'false'; ?>) {
+                            $$('.modal-remind-login')[0].classList.add('open')
+                            $("#cmt-box").blur()
+                            // hanlde count down comment box when modal open
+                            let i = 10
+                            moveInteral = setInterval(() => {
+                                $("#count-down").innerHTML = i
+                                i--
+                                if (i < 1) {
+                                    window.location.href = "login.php"
+                                }
+                            }, 1000);
+                        }
 
+                    }
+                </script>
             </div>
         </div>
     </div>

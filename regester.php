@@ -1,5 +1,6 @@
 <?php 
-
+    require_once('handleData.php');
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -24,31 +25,33 @@
                         <div class="modal__header">
                             <h3>SignUp</h3>
                         </div>
-                        <div class="form-input">
-                            <input class="form-input-username" name="username" type="text" placeholder="Emai/Phonenumber/Username">
-                            <input class="form-input-username" name="username" type="text" placeholder="Password">
-                            
-                        </div>
-                        <button class="signup-btn">TIẾP THEO</button>
-                        <div class="OR-item">
-                            <span>OR</span>
-                        </div>
-                        <div class="signup-mediasocial">
-                            <button class="signup-mediasocial-btn">
-                                <i class="icon-fb fa-brands fa-facebook"></i>
-                                Facebook
-                            </button>
-                            <button class="signup-mediasocial-btn signup-gg-btn">
-                                <i class="icon-gg fa-brands fa-google"></i>
-                                Google
-                            </button>
-                        </div>
-                        <div class="modal-footer">
-                            <p class="modal-footer-item">
-                                <span>You aldready have an account?</span>
-                                <button class="modal-footer-signup-btn"><a href="login.php" class="regester-linking">Login</a></button>
-                            </p>
-                        </div>
+                        <form action="" method="post">
+                            <div class="form-input">
+                                <input class="form-input-username" name="username" type="text" placeholder="Emai/Phonenumber/Username">
+                                <input class="form-input-username" name="password" type="text" placeholder="Password">
+                                
+                            </div>
+                            <button class="signup-btn">TIẾP THEO</button>
+                            <div class="OR-item">
+                                <span>OR</span>
+                            </div>
+                            <div class="signup-mediasocial">
+                                <button class="signup-mediasocial-btn">
+                                    <i class="icon-fb fa-brands fa-facebook"></i>
+                                    Facebook
+                                </button>
+                                <button class="signup-mediasocial-btn signup-gg-btn">
+                                    <i class="icon-gg fa-brands fa-google"></i>
+                                    Google
+                                </button>
+                            </div>
+                            <div class="modal-footer">
+                                <p class="modal-footer-item">
+                                    <span>You aldready have an account?</span>
+                                    <button class="modal-footer-signup-btn"><a href="login.php" class="regester-linking">Login</a></button>
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
 
