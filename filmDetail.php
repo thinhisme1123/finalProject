@@ -100,10 +100,12 @@ $filmGenre = getSameGenre($id);
                         <h1 id="nameFilm"><?= $film['fName'] ?></h1>
                         <button class="trailer-btn">
                             <i class="fa-brands fa-youtube"></i>
-                            Trailer</button>
+                            <a href="#watching" class="watch-btn-link">Trailer</a>
+                            </button>
                         <button class="watch-btn">
                             <i class="fa-solid fa-play"></i>
-                            Watch Film</button>
+                            <a href="#watching" class="watch-btn-link">Watch Film</a>
+                        </button>
                     </div>
                 </div>
                 <!-- information about the film start-->
@@ -208,6 +210,11 @@ $filmGenre = getSameGenre($id);
                         <p><?= $film['fDesc'] ?></p>
                     </div>
                 </div>
+                <!--Watching Film Section  -->
+                <div id="watching" class="filmdetail-watchingfilm">
+                    <video src="./video/videofilm.mp4" controls></video>
+                </div>
+
                 <!-- information about the film end-->
                 <div class="filmdetail-container-similarfilm">
                     <h1>Similiar Film</h1>
@@ -400,7 +407,6 @@ $filmGenre = getSameGenre($id);
     </div>
 
     <!-- remind loggin modal end-->
-
 
     <script type="text/javascript" src="./filmDetail.js"></script>
 </body>

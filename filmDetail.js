@@ -67,3 +67,10 @@ filmList.forEach((film) => {
         $('#nameFilm').innerText = film.filmName
     }
 })
+// hanlde clicking watching film 
+$$(".watch-btn")[0].onclick = () => {
+    $$('.filmdetail-watchingfilm')[0].classList.add('open')
+}
+$$(".trailer-btn")[0].onclick = () => {
+    $$('.filmdetail-watchingfilm')[0].classList.add('open')
+}
