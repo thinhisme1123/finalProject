@@ -74,3 +74,4 @@ $$(".watch-btn")[0].onclick = () => {
 $$(".trailer-btn")[0].onclick = () => {
     $$('.filmdetail-watchingfilm')[0].classList.add('open')
 }
+// handle display cmt when user click post

@@ -124,5 +124,28 @@
         }
         return $films;
     }
-    
+    // function to get cmt of the film
+    function getFilmcmt($id) {
+        $conn = connect();
+        $sql = "select * from filmcmt where fid = '$id'";
+        $result = $conn->query($sql);
+        $cmts = [];
+        for ($i = 1; $i <= $result->num_rows; $i++) {
+            $cmts[] = $result->fetch_assoc();
+        }
+        return $cmts;
+    }
+    // innsert cmt content to database
+    function addingCmt($id, $username, $cmtContent) {
+        $conn = connect();
+        $insertSql = "insert into filmcmt values ('$id', '$username', '$cmtContent')";
+        $conn->query($insertSql);
+    }
+    // get cmt amount
+    function getCmtAmount($id) {
+        $conn = connect();
+        $sql = "select * from filmcmt where fid = '$id'";
+        $count = mysqli_num_rows($conn->query($sql));
+        return $count;
+    }
 ?>

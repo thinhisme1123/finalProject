@@ -1,13 +1,24 @@
 <?php
-session_start();
-require_once("handleData.php");
+    session_start();
+    require_once("handleData.php");
 
-$id = $_GET['id'] ?? '1';
+    $id = $_GET['id'] ?? '1';
 
-$film = getFilmDetail($id);
+    $film = getFilmDetail($id);
 
-// $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
-$filmGenre = getSameGenre($id);
+    // $filmGern = có thể trả về một hàm mới bên handleData để lấy phim cùng thể loại
+    $filmGenre = getSameGenre($id);
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $cmtContent = $_POST['cmt'] ?? '';
+        $username = $_SESSION['user'];
+        addingCmt($id, $username, $cmtContent);
+    }
+
+    // adding cmt
+    // getFilmcmt
+    $cmts = getFilmcmt($id); 
+    $cmtAmount = getCmtAmount($id);
+    
 ?>
 
 <!DOCTYPE html>
@@ -234,41 +245,6 @@ $filmGenre = getSameGenre($id);
                             }
 
                             ?>
-                            <!-- <div class="film-item l-3 m-4 c-6">
-                                <div class="film-item-img-container">
-                                    <img src="./poster/antman.jpg" alt="">
-                                </div>
-                                <h4>Ant Man</h4>
-                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div>
-                            <div class="film-item l-3 m-4 c-6">
-                                <div class="film-item-img-container">
-                                    <img src="./poster/antman.jpg" alt="">
-                                </div>
-                                <h4>Ant Man</h4>
-                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div>
-                            <div class="film-item l-3 m-4 c-6">
-                                <div class="film-item-img-container">
-                                    <img src="./poster/antman.jpg" alt="">
-                                </div>
-                                <h4>Ant Man</h4>
-                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div>
-                            <div class="film-item l-3 m-4 c-6">
-                                <div class="film-item-img-container">
-                                    <img src="./poster/antman.jpg" alt="">
-                                </div>
-                                <h4>Ant Man</h4>
-                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div>
-                            <div class="film-item l-3 m-4 c-6">
-                                <div class="film-item-img-container">
-                                    <img src="./poster/antman.jpg" alt="">
-                                </div>
-                                <h4>Ant Man</h4>
-                                <button class="film-item-watch-btn"><a href="filmDetail.php?id=1" class="film-item-watch-link">Watch</a></button>
-                            </div> -->
 
                         </div>
                     </div>
@@ -282,7 +258,7 @@ $filmGenre = getSameGenre($id);
         <div class="comment-container">
             <div class="comment-container-grid">
                 <div class="row comment-header">
-                    <p><span id="cmt-amount">0</span> comments</p>
+                    <p><span id="cmt-amount"><?= $cmtAmount ?></span> comments</p>
                     <div class="comment-sort-style">List style
                         <select name="sort-style" id="comment-sort-style-options">
                             <option value="latest">Latest</option>
@@ -299,14 +275,19 @@ $filmGenre = getSameGenre($id);
                         <textarea name="cmt" id="cmt-box" cols="100" rows="4" oninput="resizeTextarea()" placeholder="Write your comment here" onfocus="checklog()"></textarea>
                         <button class="submit-comment-btn" type="submit" name="submit-comment-btn">Post</button>
                     </form>
+                    <script>
+
+                    </script>
                     <div class="comments-container">
+                        <?php foreach($cmts as $cmt) {?>
                         <div class="comments-container-item">
                             <img src="./icon/1200px-User_icon-cp.svg.png" alt="">
                             <div class="name-and-content">
-                                <span class="name-user">You</span>
-                                <p class="comments-container-content">phim này hay quá</p>
+                                <span class="name-user"><?= $cmt['username'] ?></span>
+                                <p class="comments-container-content"><?= $cmt['fcmt'] ?></p>
                             </div>
                         </div>
+                        <?php  }?>
                     </div>
                 </div>
                 <script>

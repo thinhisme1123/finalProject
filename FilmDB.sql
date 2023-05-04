@@ -21,6 +21,12 @@ create table `userAcc` (
 	`userpass` varchar(50)
 );
 
+create table `filmCmt` (
+	fid varchar(10),
+	username varchar(20),
+	fcmt nvarchar(150)
+);
+
 insert into `FilmInfo` values
 	('AM', 'Ant Man', 'Armed with a super-suit with the astonishing ability to shrink in scale but increase in strength, cat burglar Scott Lang must embrace his inner hero and help his mentor, Dr. Hank Pym, pull off a plan that will save the world.', 'Peyton Reed', 'America', 'Action', '117', 2015, 'antman.jpg', 'Paul Rudd, Michael Douglas, Corey Stoll'),
 	('AVEG', 'Avengers: End Game', 'After the devastating events of Avengers: Infinity War (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos actions and restore balance to the universe.', 'Anthony Russo, Joe Russo', 'America', 'Action', '181', 2019, 'avenge1.jpg', 'Robert Downney Jr., Chris Evans, Mark Ruffalo'),

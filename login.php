@@ -1,43 +1,43 @@
 <?php
-session_start();
-require_once('handleData.php');
+    session_start();
+    require_once('handleData.php');
 
-$error = '';
-$user = '';
-$pass = '';
+    $error = '';
+    $user = '';
+    $pass = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST['username']) && isset($_POST['password'])) {
-        $user = $_POST['username'];
-        $pass = $_POST['password'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $user = $_POST['username'];
+            $pass = $_POST['password'];
 
-        if (empty($user)) {
-            $error = 'Please enter your username !';
-        } else if (empty($pass)) {
-            $error = 'Please enter your password !';
-        } else {
-            $rs = login($user, $pass);
-            if ($rs == 3) {
-                $error = 'Username is wrong or does not exist !';
-            } else if ($rs == 4) {
-                $error = 'Password is wrong !';
+            if (empty($user)) {
+                $error = 'Please enter your username !';
+            } else if (empty($pass)) {
+                $error = 'Please enter your password !';
             } else {
-                $_SESSION['user'] = $rs['username'];
-                $_SESSION['id'] = $rs['userid'];
-                header('Location: index.php');
-                exit();
+                $rs = login($user, $pass);
+                if ($rs == 3) {
+                    $error = 'Username is wrong or does not exist !';
+                } else if ($rs == 4) {
+                    $error = 'Password is wrong !';
+                } else {
+                    $_SESSION['user'] = $rs['username'];
+                    $_SESSION['id'] = $rs['userid'];
+                    header('Location: index.php');
+                    exit();
+                }
             }
         }
     }
-}
 
 // $code = checkLogin($_SESSION['user'])['code'];
 // if ($code == 0) {
 //     header("location: profile.php");
 // }
-if (isset($_SESSION['user']) == true) {
-    header("location: profile.php");
-}
+    if (isset($_SESSION['user']) == true) {
+        header("location: profile.php");
+    }
 ?>
 
 <!DOCTYPE html>

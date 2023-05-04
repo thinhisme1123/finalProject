@@ -49,7 +49,7 @@
                                     }
                                 ?>
                             </div>
-                            <button class="signup-btn">TIẾP THEO</button>
+                            <button class="signup-btn">NEXT</button>
                             <div class="OR-item">
                                 <span>OR</span>
                             </div>
@@ -65,7 +65,7 @@
                             </div>
                             <div class="modal-footer">
                                 <p class="modal-footer-item">
-                                    <span>You aldready have an account?</span>
+                                    <span>You already have an account?</span>
                                     <button class="modal-footer-signup-btn"><a href="login.php" class="regester-linking">Login</a></button>
                                 </p>
                             </div>
