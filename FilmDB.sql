@@ -47,8 +47,11 @@ insert into `FilmInfo` values
 	('Su', 'Suzume', 'A modern action adventure road story where a 17-year-old girl named Suzume helps a mysterious young man close doors from the other side that are releasing disasters all over in Japan.', 'Makoto Shinkai', 'Japan', 'Anime', '122', 2022, 'suzume.jpg', 'Nanoka Hara, Hokuto Matsumura, Eri Fukatsu'),
 	('YN', 'Your name', 'Two strangers find themselves linked in a bizarre way. When a connection forms, will distance be the only thing to keep them apart?', 'Makoto Shinkai', 'Japan', 'Anime', '106', 2016, 'yourname.jpg', 'Ryunosuke Kamiki, Mone Kamishiraishi, Ryo Narita'),
 	('LCU', 'Last Chance U: Basketball', 'Explore an honest and gritty look inside the world of community college basketball.', 'Unknown', 'America', 'Sport', '60', 2021, 'basketball.jpg', 'Dezmond Washington, Rob Robinson, Kenneth Hunter'),
-	('PH', 'Pearl Habor', 'A tale of war and romance mixed in with history. The story follows two lifelong friends and a beautiful nurse who are caught up in the horror of an infamous Sunday morning in 1941.', 'Michael Bay', 'America', 'War', '183', 2001, 'pearlhabor.jpg', 'Ben Affleck, Josh Hartnett, Kate Beckinsale');
-
+	('PH', 'Pearl Habor', 'A tale of war and romance mixed in with history. The story follows two lifelong friends and a beautiful nurse who are caught up in the horror of an infamous Sunday morning in 1941.', 'Michael Bay', 'America', 'War', '183', 2001, 'pearlhabor.jpg', 'Ben Affleck, Josh Hartnett, Kate Beckinsale'),
+	('DP', 'Deadpool', 'A wisecracking mercenary gets experimented on and becomes immortal but ugly, and sets out to track down the man who ruined his looks.', 'Tim Miller', 'America', 'Action', '108', 2016, 'deadpool.jpg', 'Ryan Reynolds, Morena Baccarin, Morena Baccarin'),
+	('IS', 'Interstellar', 'A team of explorers travel through a wormhole in space in an attempt to ensure humanity''s survival.', 'Christopher Nolan', 'America', 'Adventure', '169', 2014, 'inter.jpg', 'Matthew McConaughey, Matthew McConaughey, Jessica Chastain'),
+	('TTN', 'Titanic', 'A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.', 'James Cameron', 'America', 'Romance', '194', 1997, 'ttn.jpg', 'Leonardo DiCaprio, Kate Winslet, Billy Zane'),
+	('AVA', 'Avatar', 'A paraplegic Marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.', 'James Cameron', 'America', 'Adventure', '162', 2009, 'avatar.jpg', 'Sam Worthington, Zoe Saldana, Sigourney Weaver, Michelle Rodriguez');
 
 insert into `userAcc` values
 	('AD', 'admin', '123456');
